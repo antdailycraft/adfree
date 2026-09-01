@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-31T15:24:27Z",
+  "title": "Design System: Adfree",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Record Paper",
+        "canonical": "oklch(97% 0.012 92)",
+        "tonalRamp": ["oklch(15% 0.012 92)", "oklch(27% 0.012 92)", "oklch(39% 0.012 92)", "oklch(51% 0.012 92)", "oklch(63% 0.012 92)", "oklch(75% 0.012 92)", "oklch(87% 0.012 92)", "oklch(95% 0.012 92)"]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Ledger Stock",
+        "canonical": "oklch(94% 0.014 92)",
+        "tonalRamp": ["oklch(15% 0.014 92)", "oklch(27% 0.014 92)", "oklch(39% 0.014 92)", "oklch(51% 0.014 92)", "oklch(63% 0.014 92)", "oklch(75% 0.014 92)", "oklch(87% 0.014 92)", "oklch(95% 0.014 92)"]
+      },
+      "paper-3": {
+        "role": "neutral",
+        "displayName": "Handling Tint",
+        "canonical": "oklch(90% 0.016 92)",
+        "tonalRamp": ["oklch(15% 0.016 92)", "oklch(27% 0.016 92)", "oklch(39% 0.016 92)", "oklch(51% 0.016 92)", "oklch(63% 0.016 92)", "oklch(75% 0.016 92)", "oklch(87% 0.016 92)", "oklch(95% 0.016 92)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Bench Ink",
+        "canonical": "oklch(19% 0.018 78)",
+        "tonalRamp": ["oklch(15% 0.018 78)", "oklch(27% 0.018 78)", "oklch(39% 0.018 78)", "oklch(51% 0.018 78)", "oklch(63% 0.018 78)", "oklch(75% 0.018 78)", "oklch(87% 0.018 78)", "oklch(95% 0.018 78)"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Secondary Ink",
+        "canonical": "oklch(31% 0.018 78)",
+        "tonalRamp": ["oklch(15% 0.018 78)", "oklch(27% 0.018 78)", "oklch(39% 0.018 78)", "oklch(51% 0.018 78)", "oklch(63% 0.018 78)", "oklch(75% 0.018 78)", "oklch(87% 0.018 78)", "oklch(95% 0.018 78)"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Pencil Note",
+        "canonical": "oklch(43% 0.014 82)",
+        "tonalRamp": ["oklch(15% 0.014 82)", "oklch(27% 0.014 82)", "oklch(39% 0.014 82)", "oklch(51% 0.014 82)", "oklch(63% 0.014 82)", "oklch(75% 0.014 82)", "oklch(87% 0.014 82)", "oklch(95% 0.014 82)"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Ledger Rule",
+        "canonical": "oklch(81% 0.018 88)",
+        "tonalRamp": ["oklch(15% 0.018 88)", "oklch(27% 0.018 88)", "oklch(39% 0.018 88)", "oklch(51% 0.018 88)", "oklch(63% 0.018 88)", "oklch(75% 0.018 88)", "oklch(87% 0.018 88)", "oklch(95% 0.018 88)"]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Measured Rule",
+        "canonical": "oklch(61% 0.021 84)",
+        "tonalRamp": ["oklch(15% 0.021 84)", "oklch(27% 0.021 84)", "oklch(39% 0.021 84)", "oklch(51% 0.021 84)", "oklch(63% 0.021 84)", "oklch(75% 0.021 84)", "oklch(87% 0.021 84)", "oklch(95% 0.021 84)"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Confirmed Green",
+        "canonical": "oklch(45% 0.115 151)",
+        "tonalRamp": ["oklch(15% 0.115 151)", "oklch(27% 0.115 151)", "oklch(39% 0.115 151)", "oklch(51% 0.115 151)", "oklch(63% 0.115 151)", "oklch(75% 0.115 151)", "oklch(87% 0.115 151)", "oklch(95% 0.115 151)"]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Confirmed Wash",
+        "canonical": "oklch(91% 0.043 151)",
+        "tonalRamp": ["oklch(15% 0.043 151)", "oklch(27% 0.043 151)", "oklch(39% 0.043 151)", "oklch(51% 0.043 151)", "oklch(63% 0.043 151)", "oklch(75% 0.043 151)", "oklch(87% 0.043 151)", "oklch(95% 0.043 151)"]
+      },
+      "accent-ink": {
+        "role": "primary",
+        "displayName": "Paper on Green",
+        "canonical": "oklch(97% 0.012 92)",
+        "tonalRamp": ["oklch(15% 0.012 92)", "oklch(27% 0.012 92)", "oklch(39% 0.012 92)", "oklch(51% 0.012 92)", "oklch(63% 0.012 92)", "oklch(75% 0.012 92)", "oklch(87% 0.012 92)", "oklch(95% 0.012 92)"]
+      },
+      "warning": {
+        "role": "secondary",
+        "displayName": "Pending Amber",
+        "canonical": "oklch(53% 0.116 73)",
+        "tonalRamp": ["oklch(15% 0.116 73)", "oklch(27% 0.116 73)", "oklch(39% 0.116 73)", "oklch(51% 0.116 73)", "oklch(63% 0.116 73)", "oklch(75% 0.116 73)", "oklch(87% 0.116 73)", "oklch(95% 0.116 73)"]
+      },
+      "warning-soft": {
+        "role": "secondary",
+        "displayName": "Pending Wash",
+        "canonical": "oklch(92% 0.045 73)",
+        "tonalRamp": ["oklch(15% 0.045 73)", "oklch(27% 0.045 73)", "oklch(39% 0.045 73)", "oklch(51% 0.045 73)", "oklch(63% 0.045 73)", "oklch(75% 0.045 73)", "oklch(87% 0.045 73)", "oklch(95% 0.045 73)"]
+      },
+      "warning-ink": {
+        "role": "secondary",
+        "displayName": "Dark Amber Ink",
+        "canonical": "oklch(22% 0.032 73)",
+        "tonalRamp": ["oklch(15% 0.032 73)", "oklch(27% 0.032 73)", "oklch(39% 0.032 73)", "oklch(51% 0.032 73)", "oklch(63% 0.032 73)", "oklch(75% 0.032 73)", "oklch(87% 0.032 73)", "oklch(95% 0.032 73)"]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Exception Red",
+        "canonical": "oklch(48% 0.155 28)",
+        "tonalRamp": ["oklch(15% 0.155 28)", "oklch(27% 0.155 28)", "oklch(39% 0.155 28)", "oklch(51% 0.155 28)", "oklch(63% 0.155 28)", "oklch(75% 0.155 28)", "oklch(87% 0.155 28)", "oklch(95% 0.155 28)"]
+      },
+      "danger-soft": {
+        "role": "tertiary",
+        "displayName": "Exception Wash",
+        "canonical": "oklch(92% 0.035 28)",
+        "tonalRamp": ["oklch(15% 0.035 28)", "oklch(27% 0.035 28)", "oklch(39% 0.035 28)", "oklch(51% 0.035 28)", "oklch(63% 0.035 28)", "oklch(75% 0.035 28)", "oklch(87% 0.035 28)", "oklch(95% 0.035 28)"]
+      },
+      "focus": {
+        "role": "tertiary",
+        "displayName": "Keyboard Blue",
+        "canonical": "oklch(55% 0.16 250)",
+        "tonalRamp": ["oklch(15% 0.16 250)", "oklch(27% 0.16 250)", "oklch(39% 0.16 250)", "oklch(51% 0.16 250)", "oklch(63% 0.16 250)", "oklch(75% 0.16 250)", "oklch(87% 0.16 250)", "oklch(95% 0.16 250)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "첫 화면 선언과 주요 문서 제목에만 사용하는 짧고 강한 명조 제목."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "카탈로그, 검증 기록, 가이드의 큰 섹션 제목."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "앱 이름과 행 또는 패널 안의 소제목."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "설명, 근거, 주의사항을 읽기 위한 기본 한국어 본문."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "검색, 필터, 상태 구조와 동작을 구분하는 굵은 고딕 레이블."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dropdown-lift",
+        "value": "0 0.5rem 1.5rem oklch(24% 0.022 78 / 0.12)",
+        "purpose": "모바일 메뉴가 문서 위에 열린 경우의 짧은 분리."
+      },
+      {
+        "name": "dialog-lift",
+        "value": "0 1rem 4rem oklch(24% 0.022 78 / 0.12)",
+        "purpose": "가운데 검색 대화상자가 문서 위에 열린 경우의 넓고 옅은 분리."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "대화상자 진입과 즉각적인 상태 응답."
+      },
+      {
+        "name": "ease-in",
+        "value": "cubic-bezier(0.7, 0, 0.84, 0)",
+        "purpose": "빠르게 사라지는 상태에 사용하는 가속 곡선."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "양방향 상태 전환의 균형 곡선."
+      },
+      {
+        "name": "duration-micro",
+        "value": "120ms",
+        "purpose": "reduced motion과 작은 피드백의 최소 지속 시간."
+      },
+      {
+        "name": "duration-short",
+        "value": "220ms",
+        "purpose": "호버, 초점, 검색 대화상자 진입의 기본 지속 시간."
+      },
+      {
+        "name": "duration-long",
+        "value": "420ms",
+        "purpose": "드물게 사용하는 큰 레이아웃 전환의 상한."
+      }
+    ],
+    "breakpoints": [
+      { "name": "category-index-two-column", "value": "30rem" },
+      { "name": "filter-chips-and-ledger-split", "value": "40rem" },
+      { "name": "hero-split", "value": "52rem" },
+      { "name": "desktop-index", "value": "60rem" },
+      { "name": "catalogue-two-column", "value": "70rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "확인된 공식 페이지처럼 가장 중요한 다음 단계에 쓰는 잉크색 동작.",
+      "html": "<a class=\"ds-primary-action\" href=\"#\">공식 다운로드 페이지</a>",
+      "css": ".ds-primary-action { min-height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--color-ink); border-radius: var(--radius-sm); background: var(--color-ink); color: var(--color-paper); padding: 0 var(--space-md); font-family: var(--font-body); font-weight: 700; text-decoration: none; white-space: nowrap; transition: transform var(--dur-short) var(--ease-out); } .ds-primary-action:hover { transform: translateY(-1px); } .ds-primary-action:active { transform: translateY(1px); } .ds-primary-action:focus-visible { outline: 2px solid var(--color-focus); outline-offset: var(--space-2xs); }"
+    },
+    {
+      "name": "Outline Action",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "후보 출처, 전체 보기, 가이드처럼 보조 이동에 쓰는 종이색 동작.",
+      "html": "<a class=\"ds-outline-action\" href=\"#\">후보 출처 열기</a>",
+      "css": ".ds-outline-action { min-height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--color-ink); border-radius: var(--radius-sm); background: var(--color-paper); color: var(--color-ink); padding: 0 var(--space-md); font-family: var(--font-body); font-weight: 700; text-decoration: none; white-space: nowrap; transition: background var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); } .ds-outline-action:hover { background: var(--color-paper-3); } .ds-outline-action:active { transform: translateY(1px); } .ds-outline-action:focus-visible { outline: 2px solid var(--color-focus); outline-offset: var(--space-2xs); }"
+    },
+    {
+      "name": "Catalogue Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "앱 이름이나 하려는 일을 찾는 3.5rem 높이의 핵심 입력 필드.",
+      "html": "<label class=\"ds-search-label\" for=\"ds-search\">용도로 찾기</label><div class=\"ds-search-field\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><circle cx=\"11\" cy=\"11\" r=\"6.5\"></circle><path d=\"m16 16 4 4\"></path></svg><input id=\"ds-search\" type=\"search\" placeholder=\"예: 압축, PDF\"><button type=\"button\">후보 찾기</button></div>",
+      "css": ".ds-search-label { display: block; margin-bottom: var(--space-xs); color: var(--color-ink-soft); font-family: var(--font-body); font-size: var(--text-sm); font-weight: 700; } .ds-search-field { min-height: 3.5rem; display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; gap: var(--space-sm); border: 1px solid var(--color-rule-strong); border-radius: var(--radius-sm); outline: 2px solid transparent; outline-offset: var(--space-3xs); background: var(--color-paper); padding: 0 var(--space-xs) 0 var(--space-md); } .ds-search-field:focus-within { outline-color: var(--color-focus); } .ds-search-field svg { width: 1.25rem; height: 1.25rem; fill: none; stroke: var(--color-ink); stroke-width: 2; stroke-linecap: round; } .ds-search-field input { min-width: 0; min-height: 3rem; border: 0; outline: 0; background: transparent; color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-base); } .ds-search-field input::placeholder { color: var(--color-muted); opacity: 1; } .ds-search-field button { min-height: 2.75rem; border: 0; background: transparent; color: var(--color-muted); padding: 0 var(--space-sm); font-family: var(--font-body); font-weight: 700; } .ds-search-field button:hover { color: var(--color-ink); } .ds-search-field button:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "40rem 이상에서 카테고리 질의를 바꾸며 선택 시 잉크 면으로 반전되는 pill 제어. 더 좁은 화면에서는 기본 선택 상자를 사용한다.",
+      "html": "<div class=\"ds-chip-set\" aria-label=\"카테고리\"><button class=\"ds-filter-chip\" type=\"button\" aria-pressed=\"true\">전체</button><button class=\"ds-filter-chip\" type=\"button\" aria-pressed=\"false\">압축</button></div>",
+      "css": ".ds-chip-set { display: flex; flex-wrap: wrap; gap: var(--space-xs); } .ds-filter-chip { min-height: 2.75rem; border: 1px solid var(--color-rule-strong); border-radius: var(--radius-pill); background: var(--color-paper); color: var(--color-ink-soft); padding: 0 var(--space-md); font-family: var(--font-body); font-size: var(--text-base); white-space: nowrap; transition: background var(--dur-short) var(--ease-out); } .ds-filter-chip[aria-pressed=\"true\"] { border-color: var(--color-ink); background: var(--color-ink); color: var(--color-paper); } .ds-filter-chip:hover { background: var(--color-paper-3); } .ds-filter-chip[aria-pressed=\"true\"]:hover { background: var(--color-ink); } .ds-filter-chip:active { transform: translateY(1px); } .ds-filter-chip:focus-visible { outline: 2px solid var(--color-focus); outline-offset: var(--space-2xs); }"
+    },
+    {
+      "name": "Confirmed Status Badge",
+      "kind": "chip",
+      "refersTo": "status-confirmed",
+      "description": "확인된 공식 출처나 설치 검증 완료만 나타내는 녹색 상태 표식.",
+      "html": "<span class=\"ds-status-confirmed\"><span class=\"ds-status-mark\" aria-hidden=\"true\"></span>공식 출처 확인</span>",
+      "css": ".ds-status-confirmed { min-height: 1.75rem; display: inline-flex; align-items: center; gap: var(--space-xs); border: 1px solid var(--color-accent); border-radius: var(--radius-pill); background: var(--color-accent-soft); color: var(--color-ink); padding: 0 var(--space-sm); font-family: var(--font-body); font-size: var(--text-xs); line-height: 1; white-space: nowrap; } .ds-status-mark { width: var(--space-xs); height: var(--space-xs); border-radius: var(--radius-pill); background: var(--color-accent); }"
+    },
+    {
+      "name": "Pending Status Badge",
+      "kind": "chip",
+      "refersTo": "status-pending",
+      "description": "출처 검토나 Windows 설치 검증이 아직 끝나지 않았음을 나타내는 호박색 표식.",
+      "html": "<span class=\"ds-status-pending\"><span class=\"ds-pending-mark\" aria-hidden=\"true\"></span>Windows 설치 검증 대기</span>",
+      "css": ".ds-status-pending { min-height: 1.75rem; display: inline-flex; align-items: center; gap: var(--space-xs); border: 1px solid var(--color-warning); border-radius: var(--radius-pill); background: var(--color-warning-soft); color: var(--color-warning-ink); padding: 0 var(--space-sm); font-family: var(--font-body); font-size: var(--text-xs); line-height: 1; white-space: nowrap; } .ds-pending-mark { width: var(--space-xs); height: var(--space-xs); border-radius: var(--radius-pill); background: var(--color-warning); }"
+    },
+    {
+      "name": "Ledger Navigation",
+      "kind": "nav",
+      "description": "명조 워드마크, 검색, 현재 페이지 밑줄을 한 표선 위에 둔 sticky 헤더의 대표 형태.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"주요 메뉴\"><a class=\"ds-wordmark\" href=\"#\">Adfree<span>.</span></a><button class=\"ds-nav-search\" type=\"button\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><circle cx=\"11\" cy=\"11\" r=\"6.5\"></circle><path d=\"m16 16 4 4\"></path></svg><span>앱 검색</span></button><a class=\"ds-nav-link\" href=\"#\" aria-current=\"page\">검증 기준</a></nav>",
+      "css": ".ds-nav { min-height: 4.75rem; display: grid; grid-template-columns: auto minmax(10rem, 1fr) auto; align-items: center; gap: var(--space-lg); border-bottom: 1px solid var(--color-rule); background: var(--color-paper); padding: 0 var(--space-md); } .ds-wordmark { color: var(--color-ink); font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; letter-spacing: -0.04em; text-decoration: none; white-space: nowrap; } .ds-wordmark span { color: var(--color-accent); } .ds-nav-search { min-height: 2.75rem; display: flex; align-items: center; gap: var(--space-sm); border: 1px solid var(--color-rule-strong); border-radius: var(--radius-pill); background: var(--color-paper-2); color: var(--color-ink-soft); padding: 0 var(--space-md); font-family: var(--font-body); text-align: left; } .ds-nav-search svg { width: 1.125rem; height: 1.125rem; fill: none; stroke: var(--color-ink); stroke-width: 2; stroke-linecap: round; } .ds-nav-link { min-height: 2.75rem; display: inline-flex; align-items: center; color: var(--color-ink); font-family: var(--font-body); text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: var(--space-2xs); } .ds-nav-search:hover { background: var(--color-paper-3); } .ds-wordmark:focus-visible, .ds-nav-search:focus-visible, .ds-nav-link:focus-visible { outline: 2px solid var(--color-focus); outline-offset: var(--space-2xs); }"
+    },
+    {
+      "name": "App Ledger Row",
+      "kind": "card",
+      "description": "앱 정체성, 도메인·버전·날짜, 두 검증 상태, 다음 동작을 한 기준선에서 비교하는 서명 행.",
+      "html": "<article class=\"ds-app-row\"><div class=\"ds-app-identity\"><small>압축</small><h3><a href=\"#\">7-Zip</a></h3><p>파일을 압축하고 해제하는 도구</p></div><dl class=\"ds-app-ledger\"><div><dt>공식 도메인</dt><dd>7-zip.org</dd></div><div><dt>안정판 버전</dt><dd>26.02</dd></div><div><dt>확인 날짜</dt><dd>2026.08.31</dd></div></dl><div class=\"ds-app-state\"><span class=\"ds-app-confirmed\"><i aria-hidden=\"true\"></i>공식 출처 확인</span><span class=\"ds-app-pending\"><i aria-hidden=\"true\"></i>Windows 설치 검증 대기</span></div><div class=\"ds-app-actions\"><a href=\"#\">검증 기록</a><a href=\"#\">공식 다운로드 페이지</a></div></article>",
+      "css": ".ds-app-row { display: grid; grid-template-columns: minmax(12rem,1.2fr) minmax(14rem,1fr) minmax(0,.65fr) auto; align-items: center; gap: var(--space-lg); border-bottom: 1px solid var(--color-rule-strong); background: var(--color-paper); color: var(--color-ink); padding: var(--space-md) 0; font-family: var(--font-body); } .ds-app-identity small, .ds-app-ledger dt { color: var(--color-muted); font-size: var(--text-xs); } .ds-app-identity h3 { margin: var(--space-2xs) 0 0; font-family: var(--font-display); font-size: var(--text-lg); line-height: 1.18; } .ds-app-identity h3 a { color: var(--color-ink); text-decoration: none; } .ds-app-identity p { margin: var(--space-xs) 0 0; color: var(--color-ink-soft); } .ds-app-ledger { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--space-md); margin: 0; } .ds-app-ledger dd { margin: 0; overflow: hidden; color: var(--color-ink-soft); font-size: var(--text-sm); font-variant-numeric: tabular-nums; text-overflow: ellipsis; white-space: nowrap; } .ds-app-ledger div:first-child dd { overflow: visible; overflow-wrap: anywhere; white-space: normal; } .ds-app-state { display: flex; flex-wrap: wrap; gap: var(--space-xs); } .ds-app-confirmed, .ds-app-pending { min-height: 1.75rem; display: inline-flex; align-items: center; gap: var(--space-xs); border-radius: var(--radius-pill); padding: 0 var(--space-sm); font-size: var(--text-xs); white-space: nowrap; } .ds-app-confirmed { border: 1px solid var(--color-accent); background: var(--color-accent-soft); } .ds-app-pending { border: 1px solid var(--color-warning); background: var(--color-warning-soft); color: var(--color-warning-ink); } .ds-app-confirmed i, .ds-app-pending i { width: var(--space-xs); height: var(--space-xs); border-radius: 50%; background: var(--color-accent); } .ds-app-pending i { background: var(--color-warning); } .ds-app-actions { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-sm); } .ds-app-actions a { min-height: 2.75rem; display: inline-flex; align-items: center; color: var(--color-ink); font-weight: 700; text-underline-offset: var(--space-2xs); white-space: nowrap; } .ds-app-actions a:last-child { border: 1px solid var(--color-ink); border-radius: var(--radius-sm); padding: 0 var(--space-md); text-decoration: none; } .ds-app-identity a:hover { color: var(--color-accent); } .ds-app-actions a:last-child:hover { background: var(--color-paper-3); } .ds-app-row a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: var(--space-2xs); }"
+    },
+    {
+      "name": "Scope Ledger",
+      "kind": "custom",
+      "refersTo": "ledger-panel",
+      "description": "검토 대상, 공식 출처 확인, Windows 설치 검증 완료의 현재 수치를 숨김없이 보여주는 첫 화면 기록 패널.",
+      "html": "<aside class=\"ds-scope-ledger\"><header><strong>현재 검증 현황</strong><span>2026.08.31 기준</span></header><dl><div><dt>검토 대상</dt><dd>30개</dd></div><div><dt>공식 출처 확인</dt><dd>8개</dd></div><div><dt>Windows 설치 검증 완료</dt><dd>0개</dd></div></dl><p>Windows에서 설치 과정을 직접 확인한 뒤 완료로 표시합니다.</p></aside>",
+      "css": ".ds-scope-ledger { border-top: 2px solid var(--color-ink); border-bottom: 2px solid var(--color-ink); background: var(--color-paper-2); color: var(--color-ink); padding: var(--space-lg); font-family: var(--font-body); } .ds-scope-ledger header { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); border-bottom: 1px solid var(--color-rule-strong); padding-bottom: var(--space-sm); } .ds-scope-ledger header span, .ds-scope-ledger p { color: var(--color-muted); font-size: var(--text-sm); } .ds-scope-ledger dl { margin: 0; padding: var(--space-sm) 0; } .ds-scope-ledger dl div { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); border-bottom: 1px solid var(--color-rule); padding: var(--space-xs) 0; } .ds-scope-ledger dt { color: var(--color-ink-soft); } .ds-scope-ledger dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 700; } .ds-scope-ledger p { margin: 0; line-height: 1.62; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Repair Bench Ledger",
+    "overview": "Adfree는 전자기기 수리대에 놓인 서비스 장부를 디지털 카탈로그로 옮긴다. 따뜻한 기록용지, 짙은 잉크, 눈금을 만드는 가는 표선이 기본 재료이며, 모든 시각적 선택은 ‘무엇을 확인했고 무엇이 아직 대기 중인가’를 더 빨리 읽게 해야 한다.\n\n전체 정보 구조는 앱을 홍보하는 카드 모음이 아니라 서로 연결된 기록을 훑는 Ecosystem Index다. 사용자는 이름이나 용도로 검색하고 필터링한 뒤, 한 후보의 검증 기록을 읽고, 확인된 공식 페이지 또는 후보임이 분명히 표시된 출처로 이동한다. 화면 밀도는 장부처럼 정보가 풍부하되, 절제된 세로 리듬과 강한 섹션 규칙으로 빠르게 훑을 수 있어야 한다.\n\n표면은 평평하고 물성이 느껴져야 한다. 앱 스토어식 홍보 카드 배열, 근거 없는 안전·인기 배지, 상태와 무관한 장식용 강조색은 이 세계에 속하지 않는다. 이 방향은 seed 8e97caa9에서 확정되었고 finish review의 disposition은 ship, material fixes는 없음으로 승인되었다.",
+    "keyCharacteristics": [
+      "따뜻한 종이 면과 잉크 표선으로 만든 수리대 서비스 장부",
+      "확인은 녹색, 대기와 변경은 호박색으로 읽히는 증거 중심 상태 언어",
+      "제목용 명조와 설명용 고딕이 분리된 한국어 편집 계층",
+      "그림자보다 선, 여백, 종이 농도 차이로 깊이를 만드는 평면 구조",
+      "검색·필터에서 검증 기록과 정직한 외부 출처 표기로 이어지는 작업 흐름"
+    ],
+    "rules": [
+      {
+        "name": "The Evidence Color Rule",
+        "body": "녹색은 확인된 증거, 호박색은 대기 또는 변경, 빨간색은 실패에만 사용한다. 상태와 관계없는 장식에는 세 색을 쓰지 않는다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper Dominance Rule",
+        "body": "한 화면의 대부분은 종이와 잉크 중립색이어야 하며, 상태색은 기록을 찾게 하는 작은 표식으로 남는다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ledger Voice Rule",
+        "body": "명조는 주제와 이름을 선언하고, 고딕은 상태와 근거를 설명한다. 장식적 명조를 메타데이터나 조작 레이블까지 확장하지 않는다.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Ledger Rule",
+        "body": "정지한 콘텐츠 면에는 그림자를 쓰지 않는다. 오버레이나 임시 메뉴처럼 실제로 쌓임 순서가 바뀔 때만 그림자를 허용한다.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do 검색과 필터 결과에서 상태, 확인 날짜, 공식 또는 후보 도메인을 같은 장부 행에 보여준다.",
+      "Do 확인된 공식 출처와 Windows 설치 검증을 서로 독립된 상태로 표시한다.",
+      "Do 녹색·호박색·빨간색을 증거 상태에만 연결하고 텍스트 레이블과 함께 쓴다.",
+      "Do 종이 면, 잉크 규칙, 세로 여백으로 정보 계층을 만든다.",
+      "Do 320px, 키보드 탐색, visible focus, reduced motion을 기본 품질 기준으로 유지한다."
+    ],
+    "donts": [
+      "Don't 후보 앱을 홍보 카드, 별점, 인기 순위, 추천 점수로 표현한다.",
+      "Don't 공식 출처 확인을 Windows 설치 검증 완료처럼 보이게 합치지 않는다.",
+      "Don't 검토 중인 링크를 ‘공식 다운로드’라고 부르거나 상태 표기를 생략하지 않는다.",
+      "Don't 정지한 행과 패널에 그림자·그라디언트·장식용 강조색을 추가하지 않는다.",
+      "Don't 좁은 화면에서 표를 억지로 가로 스크롤시키거나 핵심 상태와 동작을 숨기지 않는다."
+    ]
+  }
+}

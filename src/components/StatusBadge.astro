@@ -1,0 +1,20 @@
+---
+interface Props {
+  status: "confirmed" | "pending" | "changed" | "verified" | "failed";
+  type?: "source" | "installer";
+}
+
+const { status, type = "source" } = Astro.props;
+const labels = {
+  confirmed: "공식 출처 확인",
+  pending: type === "installer" ? "Windows 설치 검증 대기" : "출처 검토 중",
+  changed: "변경 재검토",
+  verified: "Windows 설치 검증 완료",
+  failed: "등재 기준 미충족",
+};
+---
+
+<span class:list={["status-badge", `status-badge--${status}`]}>
+  <span class="status-badge__mark" aria-hidden="true"></span>
+  {labels[status]}
+</span>

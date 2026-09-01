@@ -1,0 +1,21 @@
+---
+import { withBase } from "../lib/paths";
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner shell">
+    <div>
+      <p class="site-footer__wordmark">Adfree.</p>
+      <p class="site-footer__statement">다운로드는 공식 경로로,<br />검증 상태는 숨김없이.</p>
+    </div>
+    <div class="site-footer__meta">
+      <p>설치 파일을 재배포하지 않습니다.</p>
+      <nav aria-label="하단 메뉴">
+        <a href={withBase("methodology/")}>검증 기준</a>
+        <a href={withBase("updates/")}>변경 기록</a>
+        <a href="https://github.com/antdailycraft/adfree">GitHub</a>
+      </nav>
+      <p>© {new Date().getUTCFullYear()} Adfree · 공개 검증 기록</p>
+    </div>
+  </div>
+</footer>

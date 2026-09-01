@@ -1,0 +1,132 @@
+---
+import { apps } from "../data/apps";
+import { categoryById } from "../data/categories";
+import { withBase } from "../lib/paths";
+
+const searchIndex = apps.map((app) => ({
+  name: app.name,
+  summary: app.summary,
+  category: categoryById[app.category].label,
+  href: withBase(`apps/${app.slug}/`),
+  sourceStatus: app.sourceStatus,
+}));
+---
+
+<dialog class="command-dialog" data-command-dialog aria-labelledby="command-title">
+  <div class="command-dialog__frame">
+    <div class="command-dialog__field">
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="6.5"></circle>
+        <path d="m16 16 4 4"></path>
+      </svg>
+      <label class="sr-only" for="command-input" id="command-title">앱 검색</label>
+      <input id="command-input" type="search" autocomplete="off" placeholder="예: 압축, PDF, ShareX" data-command-input />
+      <button type="button" class="command-dialog__close" data-command-close aria-label="검색 닫기">닫기</button>
+    </div>
+    <p class="command-dialog__hint" id="command-hint">앱 이름과 용도로 검색합니다. 위·아래 방향키로 이동할 수 있습니다.</p>
+    <div class="command-dialog__results" role="listbox" aria-describedby="command-hint" data-command-results></div>
+  </div>
+</dialog>
+
+<script type="application/json" id="app-search-data" is:inline set:html={JSON.stringify(searchIndex)} />
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>("[data-command-dialog]");
+  const input = document.querySelector<HTMLInputElement>("[data-command-input]");
+  const results = document.querySelector<HTMLElement>("[data-command-results]");
+  const source = document.querySelector<HTMLScriptElement>("#app-search-data");
+  const index = source ? JSON.parse(source.textContent || "[]") : [];
+  let activeIndex = 0;
+
+  const normalize = (value: string) => value.normalize("NFKC").toLocaleLowerCase("ko-KR").trim();
+  const visibleResults = () => Array.from(results?.querySelectorAll<HTMLAnchorElement>("a") ?? []);
+
+  const render = () => {
+    if (!results || !input) return;
+    const query = normalize(input.value);
+    const matches = index
+      .filter((item: { name: string; summary: string; category: string }) =>
+        normalize(`${item.name} ${item.summary} ${item.category}`).includes(query),
+      )
+      .slice(0, 8);
+    activeIndex = Math.min(activeIndex, Math.max(matches.length - 1, 0));
+
+    if (matches.length === 0) {
+      results.innerHTML = `<p class="command-dialog__empty">일치하는 후보가 없습니다. 다른 용도나 앱 이름으로 검색해 보세요.</p>`;
+      return;
+    }
+
+    results.innerHTML = matches
+      .map(
+        (item: { name: string; summary: string; category: string; href: string; sourceStatus: string }, itemIndex: number) => `
+          <a href="${item.href}" role="option" aria-selected="${itemIndex === activeIndex}" class="${itemIndex === activeIndex ? "is-active" : ""}">
+            <span><strong>${item.name}</strong><small>${item.category}</small></span>
+            <span class="command-dialog__status">${item.sourceStatus === "confirmed" ? "공식 출처 확인" : "출처 검토 중"}</span>
+          </a>`,
+      )
+      .join("");
+  };
+
+  const setActive = (next: number) => {
+    const items = visibleResults();
+    if (!items.length) return;
+    activeIndex = (next + items.length) % items.length;
+    items.forEach((item, itemIndex) => {
+      const active = itemIndex === activeIndex;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-selected", String(active));
+    });
+    items[activeIndex]?.scrollIntoView({ block: "nearest" });
+  };
+
+  const open = () => {
+    if (!dialog || !input) return;
+    dialog.showModal();
+    document.querySelector("main")?.setAttribute("inert", "");
+    document.querySelector("footer")?.setAttribute("inert", "");
+    input.value = "";
+    activeIndex = 0;
+    render();
+    requestAnimationFrame(() => input.focus());
+  };
+
+  const close = () => {
+    if (!dialog?.open) return;
+    dialog.close();
+    document.querySelector("main")?.removeAttribute("inert");
+    document.querySelector("footer")?.removeAttribute("inert");
+  };
+
+  document.querySelectorAll("[data-command-open]").forEach((trigger) => trigger.addEventListener("click", open));
+  document.querySelectorAll("[data-command-close]").forEach((trigger) => trigger.addEventListener("click", close));
+  input?.addEventListener("input", render);
+  input?.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setActive(activeIndex + 1);
+    }
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setActive(activeIndex - 1);
+    }
+    if (event.key === "Enter") {
+      const selected = visibleResults()[activeIndex];
+      if (selected) {
+        event.preventDefault();
+        selected.click();
+      }
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if ((event.metaKey || event.ctrlKey) && event.key.toLocaleLowerCase() === "k") {
+      event.preventDefault();
+      dialog?.open ? close() : open();
+    }
+  });
+  dialog?.addEventListener("click", (event) => {
+    if (event.target === dialog) close();
+  });
+  dialog?.addEventListener("close", () => {
+    document.querySelector("main")?.removeAttribute("inert");
+    document.querySelector("footer")?.removeAttribute("inert");
+  });
+</script>

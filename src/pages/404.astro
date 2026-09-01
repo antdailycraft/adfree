@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/paths";
+---
+
+<BaseLayout title="페이지를 찾지 못했습니다">
+  <section class="not-found shell">
+    <p class="not-found__code">404</p>
+    <h1>이 기록은 아직 없습니다.</h1>
+    <p>주소가 바뀌었거나 검토 목록에서 이동했을 수 있습니다.</p>
+    <a class="outline-action" href={withBase()}>전체 후보로 돌아가기</a>
+  </section>
+</BaseLayout>

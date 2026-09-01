@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="검증 기준" description="Adfree 앱 선정과 공식 다운로드 링크 검증 기준">
+  <article class="text-page text-page--method shell">
+    <header class="text-page__header">
+      <h1>무료라는 말만으로는 부족합니다.</h1>
+      <p>앱을 쓰거나 설치할 때 광고가 나오지 않고, 제휴 프로그램을 함께 설치하지 않는 Windows 도구를 찾습니다. 공식 사이트의 후원 안내는 허용합니다.</p>
+    </header>
+
+    <section class="method-block">
+      <h2>등재 상태는 네 단계입니다.</h2>
+      <ol class="method-steps">
+        <li><strong>출처 검토 중</strong><p>널리 알려졌는지와 기본 조건에 맞는지 살피고, 공식 출처를 확인 중인 후보입니다. 아직 추천이 확정되지 않았습니다.</p></li>
+        <li><strong>공식 출처 확인</strong><p>개발사나 프로젝트가 관리하는 공식 도메인과 다운로드 페이지를 확인했습니다.</p></li>
+        <li><strong>Windows 설치 검증 완료</strong><p>Windows에서 설치기와 첫 실행을 확인해 광고 노출, 제휴 프로그램 동반 설치, 계정 생성 요구 여부를 기록했습니다.</p></li>
+        <li><strong>등재 또는 제외</strong><p>기준을 통과하면 공개 목록에 유지하고, 통과하지 못하면 이유와 날짜를 남깁니다.</p></li>
+      </ol>
+    </section>
+
+    <section class="method-block method-block--split">
+      <div>
+        <h2>자동화가 하는 일</h2>
+        <ul>
+          <li>공식 다운로드 페이지 응답 확인</li>
+          <li>예상하지 못한 도메인 이동 감지</li>
+          <li>GitHub 안정판 태그 변경 감지</li>
+          <li>감지한 변경 사항으로 검토 항목 생성</li>
+        </ul>
+      </div>
+      <div>
+        <h2>사람이 해야 하는 일</h2>
+        <ul>
+          <li>배포 주체와 공식 도메인 관계 확인</li>
+          <li>Windows 설치 화면 전체 검토</li>
+          <li>무료·상업적 사용 범위 확인</li>
+          <li>안정판 여부와 광고 정책 최종 승인</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="windows-checklist">
+      <h2>Windows 설치 검증 체크리스트</h2>
+      <div class="checklist-table" role="table" aria-label="Windows 설치 검증 항목">
+        <div role="row"><span role="columnheader">단계</span><span role="columnheader">확인 내용</span><span role="columnheader">실패 조건</span></div>
+        <div role="row"><span role="cell">다운로드</span><span role="cell">공식 페이지에서 안정판 선택</span><span role="cell">공식이 아닌 다운로드 사이트로 강제 이동</span></div>
+        <div role="row"><span role="cell">설치</span><span role="cell">모든 화면과 선택 항목 기록</span><span role="cell">제휴 프로그램 동반 설치·브라우저 변경 제안</span></div>
+        <div role="row"><span role="cell">첫 실행</span><span role="cell">광고·계정 생성 요구·유료 버전 안내 확인</span><span role="cell">광고 노출 또는 계정 생성 요구</span></div>
+        <div role="row"><span role="cell">제거</span><span role="cell">기본 제거와 잔여 항목 확인</span><span role="cell">삭제를 방해하는 별도 절차</span></div>
+      </div>
+      <p>현재 개발 플랫폼은 macOS입니다. 위 절차를 Windows PC 또는 가상 머신에서 수행하기 전에는 Windows 설치 검증 완료로 표시하지 않습니다.</p>
+    </section>
+  </article>
+</BaseLayout>

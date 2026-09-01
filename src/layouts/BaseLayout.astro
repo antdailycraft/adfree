@@ -1,0 +1,59 @@
+---
+import "@fontsource/ibm-plex-sans-kr/400.css";
+import "@fontsource/ibm-plex-sans-kr/700.css";
+import "@fontsource/noto-serif-kr/700.css";
+import "../styles/global.css";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import CommandSearch from "../components/CommandSearch.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Adfree — 광고 없는 Windows 유틸리티",
+  description = "공식 다운로드 경로와 검증 상태를 공개하는 Windows 유틸리티 카탈로그",
+  image,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title === "Adfree — 광고 없는 Windows 유틸리티" ? title : `${title} · Adfree`;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={`data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2210%22 fill=%22%231d2b23%22/><path d=%22M17 44V20h13c10 0 17 4 17 12s-7 12-17 12H17Zm9-7h5c5 0 8-2 8-5s-3-5-8-5h-5v10Z%22 fill=%22%23f5f2e8%22/></svg>`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <Fragment set:html={`<!--
+      THESIS: 공식 링크와 검증 상태가 같은 눈금에서 읽히는 공개 서비스 기록부. 앱 스토어형 홍보 카드 배열을 거부한다.
+      OWN-WORLD: 따뜻한 기록용지, 잉크색 활자, 얇은 표선, 녹색 확인 도장과 호박색 대기 표식.
+      STORY: 방문자는 목적을 검색하고, 검증 수준을 비교한 뒤, 공식 다운로드 페이지로 이동한다.
+      FIRST VIEWPORT: 왼쪽에 짧은 선언과 검색, 오른쪽에 현재 검증 범위를 숨김없이 적은 상태 기록.
+      FORM: electronics repair-bench service ledger, grounded direction 4, seed 8e97caa9.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->`} />
+    <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+    <SiteHeader currentPath={Astro.url.pathname} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <SiteFooter />
+    <CommandSearch />
+  </body>
+</html>

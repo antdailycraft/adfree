@@ -1,0 +1,55 @@
+---
+import type { AppRecord } from "../data/apps";
+import { categoryById } from "../data/categories";
+import { formatKoreanDate } from "../lib/format";
+import { withBase } from "../lib/paths";
+import StatusBadge from "./StatusBadge.astro";
+
+interface Props {
+  app: AppRecord;
+}
+
+const { app } = Astro.props;
+const officialHost = new URL(app.downloadPage).hostname.replace(/^www\./, "");
+const sourceConfirmed = app.sourceStatus === "confirmed";
+const searchText = [app.name, app.summary, app.editorNote, categoryById[app.category].label].join(" ");
+---
+
+<article
+  class="app-row"
+  data-catalog-item
+  data-search={searchText}
+  data-category={app.category}
+  data-source={app.sourceStatus}
+  data-portable={app.portable}
+>
+  <div class="app-row__identity">
+    <p class="app-row__category">{categoryById[app.category].label}</p>
+    <h3><a href={withBase(`apps/${app.slug}/`)}>{app.name}</a></h3>
+    <p>{app.summary}</p>
+  </div>
+  <dl class="app-row__ledger">
+    <div>
+      <dt>{sourceConfirmed ? "공식 도메인" : "후보 도메인 · 출처 검토 중"}</dt>
+      <dd>{officialHost}</dd>
+    </div>
+    <div>
+      <dt>안정판 버전</dt>
+      <dd>{app.stableVersion ?? "버전 확인 대기"}</dd>
+    </div>
+    <div>
+      <dt>출처 확인</dt>
+      <dd>{formatKoreanDate(app.sourceCheckedAt)}</dd>
+    </div>
+  </dl>
+  <div class="app-row__state">
+    <StatusBadge status={app.sourceStatus} />
+    <StatusBadge status={app.installerStatus} type="installer" />
+  </div>
+  <div class="app-row__actions">
+    <a class="text-link" href={withBase(`apps/${app.slug}/`)}>검증 기록</a>
+    <a class="outline-action" href={app.downloadPage} rel="noopener noreferrer">
+      {sourceConfirmed ? "공식 다운로드" : "후보 출처 열기 · 검토 중"}
+    </a>
+  </div>
+</article>

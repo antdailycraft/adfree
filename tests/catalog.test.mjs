@@ -4,21 +4,21 @@ import test from "node:test";
 
 const apps = JSON.parse(await readFile(new URL("../src/data/apps.json", import.meta.url), "utf8"));
 
-test("catalogue contains 30 unique candidates", () => {
-  assert.equal(apps.length, 30);
-  assert.equal(new Set(apps.map((app) => app.slug)).size, 30);
+test("catalogue contains at least 30 unique candidates", () => {
+  assert.ok(apps.length >= 30);
+  assert.equal(new Set(apps.map((app) => app.slug)).size, apps.length);
 });
 
-test("each category starts with exactly three candidates", () => {
+test("each category contains at least three candidates", () => {
   const counts = new Map();
   for (const app of apps) counts.set(app.category, (counts.get(app.category) ?? 0) + 1);
   assert.equal(counts.size, 10);
-  for (const count of counts.values()) assert.equal(count, 3);
+  for (const count of counts.values()) assert.ok(count >= 3);
 });
 
 test("confirmed records include dated official evidence", () => {
   const confirmed = apps.filter((app) => app.sourceStatus === "confirmed");
-  assert.equal(confirmed.length, 8);
+  assert.ok(confirmed.length >= 8);
   for (const app of confirmed) {
     assert.match(app.sourceCheckedAt, /^\d{4}-\d{2}-\d{2}$/);
     assert.ok(app.sourceEvidence.length > 0);

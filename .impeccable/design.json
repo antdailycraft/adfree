@@ -1,7 +1,13 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-08-31T15:24:27Z",
-  "title": "Design System: Adfree",
+  "title": "Design System: Adfree · Color Discovery",
+  "currentDirection": {
+    "name": "Color Discovery",
+    "date": "2026-11-09",
+    "authority": ["tokens.css final :root block", "src/styles/global.css Color Discovery replacement world"],
+    "summary": "밝은 바탕, 코발트 조작색, 코랄·노랑 타일, 굵은 한국어 고딕, 640px부터 2열 앱 카드. 기존 토큰 메타데이터와 장부형 샘플은 이전 방향의 기록이다."
+  },
   "extensions": {
     "colorMeta": {
       "paper": {

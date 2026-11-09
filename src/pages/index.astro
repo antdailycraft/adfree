@@ -1,251 +1,61 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AppRow from "../components/AppRow.astro";
-import { apps, installerVerifiedApps, sourceConfirmedApps } from "../data/apps";
+import CategoryIcon from "../components/CategoryIcon.astro";
+import { apps, sourceConfirmedApps } from "../data/apps";
 import { categories } from "../data/categories";
-import { formatKoreanDate } from "../lib/format";
 import { withBase } from "../lib/paths";
-
-const recentChecks = [...sourceConfirmedApps]
-  .sort((left, right) => (right.sourceCheckedAt ?? "").localeCompare(left.sourceCheckedAt ?? ""))
-  .slice(0, 5);
+const featured = ["7-zip", "vlc", "marktext", "sharex", "everything", "powertoys"].map(slug => apps.find(app => app.slug === slug)!);
 ---
-
 <BaseLayout>
-  <section class="home-intro shell">
-    <div class="home-intro__copy">
-      <h1>
-        <span class="home-intro__title-line">광고 없는 도구,</span>
-        <span class="home-intro__title-line home-intro__accent">공식 경로로.</span>
-      </h1>
-      <p>공식 출처가 확인된 앱과 아직 출처를 검토 중인 후보를 나눠 보여드립니다. 확인 날짜와 Windows 설치 검증 상태도 함께 기록합니다.</p>
-      <form class="home-search" data-home-search>
-        <label for="home-query">용도로 찾기</label>
-        <div class="catalog-search__field home-search__field">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="6.5"></circle>
-            <path d="m16 16 4 4"></path>
-          </svg>
-          <input id="home-query" type="search" autocomplete="off" placeholder="예: 압축, PDF" data-home-query />
-          <button type="submit">후보 찾기</button>
-        </div>
-        <p>앱 이름을 몰라도 하려는 일로 찾을 수 있습니다.</p>
-      </form>
-      <div class="home-intro__links">
-        <a class="text-link" href={withBase("updates/")}>검증 기록 보기</a>
-        <a class="text-link" href={withBase("methodology/")}>선정 기준 보기</a>
-      </div>
-    </div>
-    <aside class="scope-ledger" aria-label="현재 검증 현황">
-      <div class="scope-ledger__title">
-        <h2>현재 검증 현황</h2>
-        <span>2026.08.31 기준</span>
-      </div>
-      <dl>
-        <div><dt>검토 대상</dt><dd>{apps.length}개</dd></div>
-        <div><dt>공식 출처 확인</dt><dd>{sourceConfirmedApps.length}개</dd></div>
-        <div><dt>Windows 설치 검증 완료</dt><dd>{installerVerifiedApps.length}개</dd></div>
-      </dl>
-      <p>Windows에서 설치 과정을 직접 확인한 뒤 완료로 표시합니다.</p>
-    </aside>
-  </section>
-
-  <section class="catalog-section shell" id="catalog" aria-labelledby="catalog-title">
-    <header class="section-heading section-heading--catalog">
-      <div>
-        <h2 id="catalog-title">용도로 찾기</h2>
-        <p>앱 이름을 몰라도 하려는 일로 찾을 수 있습니다.</p>
-      </div>
-      <p class="catalog-count" aria-live="polite">후보 <strong data-result-count>{apps.length}</strong>개</p>
-    </header>
-
-    <form class="catalog-controls" data-catalog-form>
-      <div class="catalog-search">
-        <label for="catalog-query">앱 이름 또는 용도</label>
-        <div class="catalog-search__field">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="6.5"></circle>
-            <path d="m16 16 4 4"></path>
-          </svg>
-          <input id="catalog-query" name="q" type="search" autocomplete="off" placeholder="예: 압축, PDF" data-catalog-query />
-          <button type="button" data-catalog-reset>초기화</button>
-        </div>
-        <p class="field-help">입력하는 즉시 현재 목록에서 찾습니다.</p>
-      </div>
-      <div class="filter-group">
-        <p class="filter-label" id="category-filter-label">카테고리</p>
-        <div class="filter-chips" role="group" aria-labelledby="category-filter-label">
-          <button type="button" aria-pressed="true" data-category-filter="all">전체</button>
-          {categories.map((category) => (
-            <button type="button" aria-pressed="false" data-category-filter={category.id}>{category.label}</button>
-          ))}
-        </div>
-      </div>
-      <div class="category-select-filter">
-        <label for="category-select">카테고리</label>
-        <select id="category-select" data-category-select>
-          <option value="all">전체</option>
-          {categories.map((category) => <option value={category.id}>{category.label}</option>)}
-        </select>
-      </div>
-      <div class="compact-filters">
-        <label>
-          <span>출처 상태</span>
-          <select name="source" data-source-filter>
-            <option value="all">전체</option>
-            <option value="confirmed">공식 출처 확인</option>
-            <option value="pending">출처 검토 중</option>
-          </select>
-        </label>
-        <label class="check-filter">
-          <input type="checkbox" data-portable-filter />
-          <span>포터블 제공 후보만</span>
-        </label>
-      </div>
-    </form>
-
-    <div class="app-list" data-app-list>
-      {apps.map((app) => <AppRow app={app} />)}
-    </div>
-    <div class="catalog-empty" data-catalog-empty hidden>
-      <h3>조건에 맞는 후보가 없습니다.</h3>
-      <p>검색어를 줄이거나 출처·포터블 필터를 초기화해 보세요.</p>
-      <button type="button" class="outline-action" data-catalog-reset>전체 후보 보기</button>
-    </div>
-  </section>
-
-  <section class="category-index shell" aria-labelledby="category-title">
-    <header class="section-heading">
-      <h2 id="category-title">10가지 용도</h2>
-      <p>각 용도에서 대표 후보 3개씩을 검토합니다.</p>
-    </header>
-    <div class="category-index__grid">
-      {categories.map((category) => {
-        const count = apps.filter((app) => app.category === category.id).length;
-        return (
-          <a href={`?category=${category.id}#catalog`}>
-            <span>{category.label}</span>
-            <small>{category.description}</small>
-            <strong>{count}개</strong>
-          </a>
-        );
-      })}
-    </div>
-  </section>
-
-  <section class="recent-section shell" aria-labelledby="recent-title">
-    <header class="section-heading section-heading--split">
-      <div>
-        <h2 id="recent-title">최근 확인한 출처</h2>
-        <p>사람이 공식 페이지를 직접 확인한 최근 기록입니다.</p>
-      </div>
-      <a class="text-link" href={withBase("updates/")}>전체 검증 기록</a>
-    </header>
-    <div class="recent-list">
-      {recentChecks.map((app) => (
-        <a href={withBase(`apps/${app.slug}/`)}>
-          <strong>{app.name}</strong>
-          <span>{app.stableVersion ? `안정판 버전 ${app.stableVersion}` : "버전 확인 대기"}</span>
-          <time datetime={app.sourceCheckedAt ?? undefined}>{formatKoreanDate(app.sourceCheckedAt)}</time>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="guide-callout shell" aria-labelledby="guide-title">
-    <div>
-      <h2 id="guide-title">검색 결과 맨 위의 사이트가 공식 사이트라는 보장은 없습니다.</h2>
-      <p>비슷한 이름의 도메인, 다운로드 버튼처럼 보이는 광고, 설치 파일 재포장 사이트를 구분하는 네 가지 기준을 정리했습니다.</p>
-    </div>
-    <a class="outline-action" href={withBase("guides/official-downloads/")}>공식 주소 확인법</a>
-  </section>
-
-  <script>
-    const form = document.querySelector<HTMLFormElement>("[data-catalog-form]");
-    const homeForm = document.querySelector<HTMLFormElement>("[data-home-search]");
-    const homeQuery = document.querySelector<HTMLInputElement>("[data-home-query]");
-    const queryInput = document.querySelector<HTMLInputElement>("[data-catalog-query]");
-    const sourceSelect = document.querySelector<HTMLSelectElement>("[data-source-filter]");
-    const portableInput = document.querySelector<HTMLInputElement>("[data-portable-filter]");
-    const categorySelect = document.querySelector<HTMLSelectElement>("[data-category-select]");
-    const categoryButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-category-filter]"));
-    const items = Array.from(document.querySelectorAll<HTMLElement>("[data-catalog-item]"));
-    const resultCount = document.querySelector<HTMLElement>("[data-result-count]");
-    const empty = document.querySelector<HTMLElement>("[data-catalog-empty]");
-    let category = "all";
-
-    const normalize = (value: string) => value.normalize("NFKC").toLocaleLowerCase("ko-KR").trim();
-    const setCategory = (next: string) => {
-      category = next;
-      categoryButtons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.categoryFilter === category)));
-      if (categorySelect) categorySelect.value = category;
-    };
-    const applyFilters = () => {
-      const query = normalize(queryInput?.value ?? "");
-      const source = sourceSelect?.value ?? "all";
-      const portableOnly = portableInput?.checked ?? false;
-      let visible = 0;
-
-      items.forEach((item) => {
-        const matchesQuery = !query || normalize(item.dataset.search ?? "").includes(query);
-        const matchesCategory = category === "all" || item.dataset.category === category;
-        const matchesSource = source === "all" || item.dataset.source === source;
-        const matchesPortable = !portableOnly || item.dataset.portable === "yes";
-        const matches = matchesQuery && matchesCategory && matchesSource && matchesPortable;
-        item.hidden = !matches;
-        if (matches) visible += 1;
-      });
-
-      if (resultCount) resultCount.textContent = String(visible);
-      if (empty) empty.hidden = visible !== 0;
-
-      const params = new URLSearchParams();
-      if (query) params.set("q", queryInput?.value.trim() ?? "");
-      if (category !== "all") params.set("category", category);
-      if (source !== "all") params.set("source", source);
-      if (portableOnly) params.set("portable", "1");
-      const url = `${window.location.pathname}${params.size ? `?${params}` : ""}`;
-      history.replaceState(null, "", url);
-    };
-    const reset = () => {
-      form?.reset();
-      if (homeQuery) homeQuery.value = "";
-      setCategory("all");
-      applyFilters();
-      queryInput?.focus({ preventScroll: true });
-    };
-
-    categoryButtons.forEach((button) => button.addEventListener("click", () => {
-      setCategory(button.dataset.categoryFilter ?? "all");
-      applyFilters();
-    }));
-    categorySelect?.addEventListener("change", () => {
-      setCategory(categorySelect.value);
-      applyFilters();
+<div class="landing">
+<section class="landing-hero shell">
+  <div class="landing-hero__copy">
+    <h1>좋은 도구만.<br /><span>복잡함 없이.</span></h1>
+    <p>필요한 일에 맞는 무료 Windows 도구를 찾으세요.<br />공식 출처와 확인 기록까지, 한곳에서.</p>
+    <a class="landing-cta" href={withBase("apps/")}>도구 찾아보기 <span aria-hidden="true">↗</span></a>
+    <a class="landing-secondary" href="#how-it-works">어떻게 확인하나요?</a>
+    <div class="landing-facts"><span><strong>{apps.length}</strong>개 탐색 후보</span><span><strong>{categories.length}</strong>가지 용도</span><span>공식 출처 확인 <strong>{sourceConfirmedApps.length}</strong>개</span></div>
+  </div>
+  <div class="tool-stage" data-tool-stage aria-label="탐색할 수 있는 실제 앱">
+    <div class="tool-stage__orbit" aria-hidden="true"></div>
+    <div class="tool-stage__collection">{featured.map((app,index) => <a class={`tool-tile tool-tile--${index}`} href={withBase(`apps/${app.slug}/`)}><span class="tool-tile__icon"><CategoryIcon category={app.category} /></span><strong>{app.name}</strong><span>{app.sourceStatus === "confirmed" ? "공식 출처 확인" : "출처 검토 중"}</span></a>)}</div>
+    <p class="tool-stage__caption">나에게 맞는 도구를 발견하는 곳.</p>
+  </div>
+</section>
+<section class="landing-discover shell" aria-labelledby="discover-title">
+  <header><h2 id="discover-title">무엇을 하고 싶으세요?</h2><p>앱 이름을 몰라도 괜찮습니다. 하려는 일부터 골라보세요.</p></header>
+  <div class="landing-categories">{categories.map(category => <a data-category={category.id} href={`${withBase("apps/")}?category=${category.id}#catalog`}><CategoryIcon category={category.id} /><span>{category.label}</span><span aria-hidden="true">↗</span></a>)}</div>
+</section>
+<section class="landing-process" id="how-it-works"><div class="shell landing-process__layout">
+  <div class="landing-process__intro"><h2>다운로드까지,<br />근거 있는 선택.</h2><p>유명하다는 이유만으로 추천하지 않습니다. 확인한 것과 아직 확인하지 못한 것을 구분합니다.</p><a class="landing-secondary" href={withBase("methodology/")}>검증 기준 살펴보기 ↗</a></div>
+  <ol class="landing-steps">
+    <li data-process-step><span>01</span><div><h3>필요한 도구를 찾고</h3><p>10가지 용도에서 앱을 탐색하고, 검색과 필터로 후보를 좁힙니다.</p></div></li>
+    <li data-process-step><span>02</span><div><h3>확인 기록을 읽고</h3><p>공식 출처, 확인 날짜, 라이선스와 Windows 설치 검증 상태를 살펴봅니다.</p></div></li>
+    <li data-process-step><span>03</span><div><h3>공식 페이지로 이동하세요</h3><p>확인된 공식 다운로드 페이지로 안내합니다. 출처 검토 중인 링크는 후보로 표시합니다.</p></div></li>
+  </ol>
+</div></section>
+<section class="landing-close shell"><h2>다음에 쓸 도구,<br />여기서 찾아보세요.</h2><div><p>설치 파일은 직접 배포하지 않습니다.<br />출처 확인과 Windows 설치 검증은 별도로 표시합니다.</p><a class="landing-cta" href={withBase("apps/")}>카탈로그 열기 <span aria-hidden="true">↗</span></a></div></section>
+</div>
+<script>
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  const stage = document.querySelector<HTMLElement>("[data-tool-stage]");
+  const collection = stage?.querySelector<HTMLElement>(".tool-stage__collection");
+  let frame = 0;
+  stage?.addEventListener("pointermove", event => {
+    if (reduced.matches || event.pointerType !== "mouse" || !collection) return;
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => {
+      const b = stage.getBoundingClientRect();
+      collection.style.transform = `perspective(1000px) rotateX(${-((event.clientY-b.top)/b.height-.5)*8}deg) rotateY(${((event.clientX-b.left)/b.width-.5)*10}deg)`;
     });
-    queryInput?.addEventListener("input", () => {
-      if (homeQuery) homeQuery.value = queryInput.value;
-      applyFilters();
-    });
-    sourceSelect?.addEventListener("change", applyFilters);
-    portableInput?.addEventListener("change", applyFilters);
-    document.querySelectorAll("[data-catalog-reset]").forEach((button) => button.addEventListener("click", reset));
-    form?.addEventListener("submit", (event) => event.preventDefault());
-    homeForm?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (queryInput) queryInput.value = homeQuery?.value ?? "";
-      applyFilters();
-      document.querySelector("#catalog")?.scrollIntoView();
-      queryInput?.focus({ preventScroll: true });
-    });
-
-    const params = new URLSearchParams(window.location.search);
-    const initialCategory = params.get("category") ?? "all";
-    if (categoryButtons.some((button) => button.dataset.categoryFilter === initialCategory) || categorySelect?.querySelector(`option[value="${CSS.escape(initialCategory)}"]`)) setCategory(initialCategory);
-    if (queryInput) queryInput.value = params.get("q") ?? "";
-    if (homeQuery) homeQuery.value = params.get("q") ?? "";
-    if (sourceSelect && ["confirmed", "pending"].includes(params.get("source") ?? "")) sourceSelect.value = params.get("source") ?? "all";
-    if (portableInput) portableInput.checked = params.get("portable") === "1";
-    applyFilters();
-  </script>
+  });
+  const reset = () => { cancelAnimationFrame(frame); if(collection) collection.style.transform = "none"; };
+  stage?.addEventListener("pointerleave", reset);
+  reduced.addEventListener("change", reset);
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => entry.target.classList.toggle("is-active",entry.isIntersecting)), {threshold:.65});
+    document.querySelectorAll("[data-process-step]").forEach(step => observer.observe(step));
+  }
+  if (location.search || location.hash === "#catalog") location.replace(`${import.meta.env.BASE_URL}apps/${location.search}${location.hash}`);
+</script>
 </BaseLayout>

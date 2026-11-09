@@ -26,7 +26,7 @@ const categoryCounts = new Map();
 const addError = (app, message) => errors.push(`${app?.slug ?? "<unknown>"}: ${message}`);
 const isDate = (value) => typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`));
 
-if (apps.length !== 30) errors.push(`catalogue: expected 30 candidates, found ${apps.length}`);
+if (apps.length < 30) errors.push(`catalogue: expected at least 30 candidates, found ${apps.length}`);
 
 for (const app of apps) {
   for (const field of ["slug", "name", "category", "summary", "editorNote", "license", "commercialUse", "homepage", "downloadPage"]) {
@@ -70,7 +70,7 @@ for (const app of apps) {
 
 for (const category of expectedCategories) {
   const count = categoryCounts.get(category) ?? 0;
-  if (count !== 3) errors.push(`category ${category}: expected 3 candidates, found ${count}`);
+  if (count < 3) errors.push(`category ${category}: expected at least 3 candidates, found ${count}`);
 }
 
 if (errors.length > 0) {

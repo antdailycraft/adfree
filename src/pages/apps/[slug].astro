@@ -19,7 +19,7 @@ const sourceConfirmed = app.sourceStatus === "confirmed";
 <BaseLayout title={app.name} description={`${app.name} 다운로드 경로와 Adfree 검증 상태`}>
   <article class="detail-page shell">
     <nav class="breadcrumb" aria-label="현재 위치">
-      <a href={withBase()}>홈</a><span aria-hidden="true">/</span><a href={`${withBase()}?category=${app.category}#catalog`}>{categoryById[app.category].label}</a><span aria-hidden="true">/</span><span aria-current="page">{app.name}</span>
+      <a href={withBase()}>홈</a><span aria-hidden="true">/</span><a href={`${withBase("apps/")}?category=${app.category}#catalog`}>{categoryById[app.category].label}</a><span aria-hidden="true">/</span><span aria-current="page">{app.name}</span>
     </nav>
     <header class="detail-header">
       <div>

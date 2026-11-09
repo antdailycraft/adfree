@@ -7,6 +7,7 @@ interface Props {
 
 const { currentPath } = Astro.props;
 const links = [
+  { href: withBase("apps/"), label: "도구 탐색" },
   { href: withBase("updates/"), label: "업데이트" },
   { href: withBase("methodology/"), label: "검증 기준" },
   { href: withBase("guides/official-downloads/"), label: "가이드" },
@@ -32,7 +33,7 @@ const links = [
     <details class="mobile-menu">
       <summary>메뉴</summary>
       <nav aria-label="모바일 메뉴">
-        {links.map((link) => <a href={link.href}>{link.label}</a>)}
+        {links.map((link) => <a href={link.href} aria-current={currentPath === link.href ? "page" : undefined}>{link.label}</a>)}
       </nav>
     </details>
   </div>

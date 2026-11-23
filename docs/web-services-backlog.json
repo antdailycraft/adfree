@@ -1,0 +1,44 @@
+{
+  "purpose": "향후 웹서비스 수집 범위 확장 시 검토할 참고 목록. 현재 공개 카탈로그에는 포함하지 않음.",
+  "savedAt": "2026-11-24",
+  "source": "https://blog.aidaon.com/links/",
+  "relatedReview": "blog-links-review-2026-11-24.json",
+  "entries": [
+    {
+      "name": "JSONPath Online Evaluator",
+      "url": "https://jsonpath.com",
+      "category": "JSON 처리",
+      "status": "saved_for_later",
+      "adFreeStatus": "unverified"
+    },
+    {
+      "name": "Online JSON Viewer",
+      "url": "https://jsonviewer.stack.hu/",
+      "category": "JSON 보기",
+      "status": "saved_for_later",
+      "adFreeStatus": "unverified"
+    },
+    {
+      "name": "Seeking Alpha",
+      "url": "https://seekingalpha.com/",
+      "category": "투자 정보",
+      "status": "saved_for_later",
+      "adFreeStatus": "unverified"
+    },
+    {
+      "name": "Unsplash",
+      "url": "https://unsplash.com/ko",
+      "category": "이미지 소재",
+      "status": "saved_for_later",
+      "adFreeStatus": "unverified"
+    }
+  ],
+  "reviewBeforeListing": [
+    "무료 사용 범위와 유료 기능 구분",
+    "광고·후원 콘텐츠 노출 여부",
+    "계정 필요 여부",
+    "입력·업로드 데이터 처리와 개인정보 정책",
+    "이용약관과 콘텐츠 사용 조건"
+  ],
+  "notes": "개발 라이브러리·프레임워크·문서는 별도 웹서비스로 분류하지 않으며 기존 검토 기록에 보존함. 저장은 무료·무광고 적합성 확인을 의미하지 않음."
+}

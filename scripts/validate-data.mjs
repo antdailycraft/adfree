@@ -63,6 +63,19 @@ for (const app of apps) {
   }
 
   if (app.installerStatus === "verified" && !isDate(app.installerCheckedAt)) addError(app, "verified installer needs installerCheckedAt");
+  if (app.adFreeReview !== undefined) {
+    const review = app.adFreeReview;
+    if (!review || review.basis !== "official_statement" || !isDate(review.checkedAt)
+      || typeof review.scope !== "string" || !review.scope.trim()) {
+      addError(app, "adFreeReview needs an official statement, date and scope");
+    }
+    try {
+      const url = new URL(review?.evidence);
+      if (url.protocol !== "https:" || !app.sourceEvidence.includes(review.evidence)) {
+        addError(app, "adFreeReview evidence must be an HTTPS source evidence URL");
+      }
+    } catch { addError(app, "adFreeReview needs a valid evidence URL"); }
+  }
   if (app.releaseDate !== null && !isDate(app.releaseDate)) addError(app, "releaseDate must be YYYY-MM-DD or null");
   if (!app.releaseSource || !["page", "github"].includes(app.releaseSource.kind)) addError(app, "releaseSource must be page or github");
   if (app.releaseSource?.kind === "github" && !/^[^/]+\/[^/]+$/.test(app.releaseSource.repo ?? "")) addError(app, "GitHub release source needs owner/repo");

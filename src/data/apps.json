@@ -968,5 +968,42 @@
       "kind": "github",
       "repo": "marktext/marktext"
     }
+  },
+  {
+    "slug": "obsidian",
+    "adFreeReview": {
+      "basis": "official_statement",
+      "checkedAt": "2026-11-24",
+      "evidence": "https://obsidian.md/blog/free-for-work/",
+      "scope": "기본 앱에 대한 개발사 공식 안내 기준입니다. Windows 설치·첫 실행과 외부 플러그인은 검증하지 않았습니다."
+    },
+    "name": "Obsidian",
+    "category": "text",
+    "summary": "Markdown 메모를 로컬에 저장하고 문서 사이의 연결을 관리하는 노트 앱입니다.",
+    "editorNote": "공식 안내에서 개인·업무용 무료 사용, 계정 불필요, 광고·추적 없음을 확인했습니다. Sync·Publish는 선택형 유료 서비스입니다. 이 기록은 기본 앱을 대상으로 하며, Windows 설치·첫 실행과 외부 플러그인은 검증하지 않았습니다.",
+    "license": "프리웨어 (독점 라이선스)",
+    "commercialUse": "개인·상업적·비영리 목적 무료 사용 가능. Commercial 후원 라이선스는 선택 사항",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://obsidian.md/",
+    "downloadPage": "https://obsidian.md/download",
+    "officialHosts": ["obsidian.md", "github.com"],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://obsidian.md/download",
+      "https://obsidian.md/blog/free-for-work/",
+      "https://obsidian.md/license",
+      "https://obsidian.md/pricing",
+      "https://github.com/obsidianmd/obsidian-releases/releases/tag/v1.15.1"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "1.15.1",
+    "releaseDate": "2026-11-12",
+    "releaseSource": {
+      "kind": "github",
+      "repo": "obsidianmd/obsidian-releases"
+    }
   }
 ]

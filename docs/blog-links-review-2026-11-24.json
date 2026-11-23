@@ -1,0 +1,26 @@
+{
+  "source": "https://blog.aidaon.com/links/",
+  "checkedAt": "2026-11-24",
+  "scope": "링크 모음 본문의 외부 링크 17개. 현재 카탈로그의 Windows 설치형 유틸리티 범위에 맞춰 검토. 오픈소스 또는 무료라는 이유만으로 광고 없음으로 판정하지 않음.",
+  "entries": [
+    {"name":"Brave","url":"https://brave.com/ko","decision":"hold","reason":"광고 차단 기능이 브라우저 자체의 광고 없음을 보장하지 않음. 자체 광고·후원 콘텐츠의 기본 동작 확인 필요."},
+    {"name":"ConEmu","url":"https://conemu.github.io","decision":"hold","reason":"공식 배포 경로 확인. 광고 없음과 설치 번들 여부를 확정할 근거 부족; Preview와 Stable 구분도 필요.","evidence":["https://conemu.github.io/en/Downloads.html"]},
+    {"name":"curl","url":"https://curl.se/windows","decision":"hold","reason":"공식 Windows 명령줄 도구 배포 확인. 광고 없음 검증 근거를 이번 조사에서 확정하지 못해 보류. 광고가 있다는 뜻은 아님.","evidence":["https://curl.se/windows/"]},
+    {"name":"Apache ECharts","url":"https://echarts.apache.org/en/index.html","decision":"out_of_scope","reason":"웹 차트 개발 라이브러리"},
+    {"name":"Handsontable","url":"https://handsontable.com/","decision":"out_of_scope","reason":"웹 데이터 그리드 개발 라이브러리"},
+    {"name":"JSONPath Online Evaluator","url":"https://jsonpath.com","decision":"out_of_scope","reason":"온라인 평가 도구; Windows 앱 배포 페이지가 아님"},
+    {"name":"Online JSON Viewer","url":"https://jsonviewer.stack.hu/","decision":"out_of_scope","reason":"온라인 뷰어; Windows 앱 배포 페이지가 아님"},
+    {"name":"반디집","url":"https://kr.bandisoft.com/bandizip","decision":"exclude","reason":"공식 에디션 비교에서 무료 스탠더드의 제품 내 광고 없음 항목이 미지원으로 표시됨.","evidence":["https://kr.bandisoft.com/bandizip/help/edition-comparison/"]},
+    {"name":"Obsidian","url":"https://obsidian.md","decision":"added","slug":"obsidian","reason":"공식 무료·업무용 사용·계정 불필요·광고 없음 안내와 Windows 안정판 배포 확인. 실제 설치 검증은 대기.","evidence":["https://obsidian.md/blog/free-for-work/","https://obsidian.md/license","https://obsidian.md/download","https://github.com/obsidianmd/obsidian-releases/releases/tag/v1.15.1"]},
+    {"name":"PicPick","url":"https://picpick.net","decision":"exclude","reason":"데스크톱 공식 가격·다운로드 안내에서 No ads가 Pro 혜택으로 표시되어 무료 무광고 대상에 포함하지 않음. 블로그의 picpick.net은 현재 클라우드 서비스도 제공.","evidence":["https://picpick.app/en/pricing/","https://picpick.app/en/download/"]},
+    {"name":"PrimeNG UI Kit","url":"https://primeng.org/uikit","decision":"out_of_scope","reason":"UI 디자인·개발 키트"},
+    {"name":"Seeking Alpha","url":"https://seekingalpha.com/","decision":"out_of_scope","reason":"투자 정보 웹서비스"},
+    {"name":"Liquid","url":"https://shopify.github.io/liquid/","decision":"out_of_scope","reason":"템플릿 언어 문서"},
+    {"name":"Tailwind CSS","url":"https://tailwindcss.com/","decision":"out_of_scope","reason":"웹 스타일 개발 프레임워크"},
+    {"name":"Gridster2","url":"https://tiberiuzuld.github.io/angular-gridster2/gridSizes","decision":"out_of_scope","reason":"Angular 레이아웃 개발 라이브러리 예제"},
+    {"name":"Unsplash","url":"https://unsplash.com/ko","decision":"out_of_scope","reason":"이미지 소재 웹서비스"},
+    {"name":"WinMerge","url":"https://winmerge.org","decision":"hold","reason":"공식 Windows 비교 도구와 무료 오픈소스 배포 확인. 광고 없음·설치 번들 검증 근거 부족으로 보류. winmerge.io의 무광고 주장은 공식 winmerge.org와의 관계가 확인되지 않아 근거에서 제외.","evidence":["https://winmerge.org/"]}
+  ],
+  "summary": {"added":1,"excluded":2,"held":4,"outOfScope":10},
+  "limitations": ["Windows 설치 파일을 실행하지 않음", "보류는 광고 존재 판정이 아님", "웹서비스·개발 라이브러리의 광고 여부는 별도로 검증하지 않음"]
+}

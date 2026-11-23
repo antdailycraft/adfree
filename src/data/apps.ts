@@ -24,6 +24,12 @@ export interface AppRecord {
   sourceStatus: SourceStatus;
   sourceCheckedAt: string | null;
   sourceEvidence: string[];
+  adFreeReview?: {
+    basis: "official_statement";
+    checkedAt: string;
+    evidence: string;
+    scope: string;
+  };
   installerStatus: InstallerStatus;
   installerCheckedAt: string | null;
   stableVersion: string | null;

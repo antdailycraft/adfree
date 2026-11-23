@@ -4,6 +4,7 @@ import { categoryById } from "../data/categories";
 import { formatKoreanDate } from "../lib/format";
 import { withBase } from "../lib/paths";
 import StatusBadge from "./StatusBadge.astro";
+import AdfreeEmblem from "./AdfreeEmblem.astro";
 import CategoryIcon from "./CategoryIcon.astro";
 import { createSearchText } from "../lib/search";
 
@@ -50,6 +51,7 @@ const searchText = createSearchText(app, categoryById[app.category]);
     </div>
   </dl>
   <div class="app-row__state">
+    <AdfreeEmblem app={app} />
     <StatusBadge status={app.sourceStatus} />
     <StatusBadge status={app.installerStatus} type="installer" />
   </div>

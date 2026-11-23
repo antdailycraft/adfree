@@ -1,0 +1,136 @@
+{
+  "checkedAt": "2026-11-13",
+  "reviewed": 16,
+  "versionsUpdated": 15,
+  "automatedReviewCount": { "before": 16, "after": 5 },
+  "networkCrossCheck": {
+    "method": "curl HEAD with TLS verification and 10-second timeout",
+    "http200": ["https://kate-editor.org/get-it/", "https://www.libreoffice.org/download/", "https://obsproject.com/download", "https://www.videolan.org/vlc/"],
+    "additionalCheck": "VLC homepage GET also returned 200 and contained version 3.0.24. Node fetch still fails with ETIMEDOUT; the transport-specific cause is unresolved."
+  },
+  "editionReview": {
+    "imageglass": "The listed edition is now explicitly Classic. Official Classic page and license state free personal/commercial use under GPLv3, no account and no ads. Windows runtime behavior remains unverified.",
+    "evidence": ["https://imageglass.org/classic", "https://imageglass.org/license?type=classic"]
+  },
+  "changes": [
+    {
+      "slug": "nanazip",
+      "previousVersion": null,
+      "version": "7.0.1882.0",
+      "evidence": "https://github.com/M2Team/NanaZip/releases/tag/7.0.1882.0",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "mpc-be",
+      "previousVersion": null,
+      "version": "1.9.3",
+      "evidence": "https://github.com/Aleksoid1978/MPC-BE/releases/tag/1.9.3",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "imageglass",
+      "previousVersion": null,
+      "version": "10.0.6.906",
+      "evidence": "https://github.com/d2phap/ImageGlass/releases/tag/10.0.6.906",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "sharex",
+      "previousVersion": "21.0.0",
+      "version": "22.4.0",
+      "evidence": "https://github.com/ShareX/ShareX/releases/tag/v22.4.0",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "obs-studio",
+      "previousVersion": null,
+      "version": "33.0.1",
+      "evidence": "https://github.com/obsproject/obs-studio/releases/tag/33.0.1",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "duplicati",
+      "previousVersion": "2.3.0.4",
+      "version": "2.4.1.0",
+      "evidence": "https://github.com/duplicati/duplicati/releases/tag/v2.4.1.0_stable_2026-10-29",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "kopia",
+      "previousVersion": null,
+      "version": "0.23.1",
+      "evidence": "https://github.com/kopia/kopia/releases/tag/v0.23.1",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "syncthing",
+      "previousVersion": null,
+      "version": "2.1.7",
+      "evidence": "https://github.com/syncthing/syncthing/releases/tag/v2.1.7",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "keepassxc",
+      "previousVersion": null,
+      "version": "2.8.0",
+      "evidence": "https://github.com/keepassxreboot/keepassxc/releases/tag/2.8.0",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "powertoys",
+      "previousVersion": null,
+      "version": "0.102.3101.0",
+      "evidence": "https://github.com/microsoft/PowerToys/releases/tag/v0.102.3101",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "notepad-plus-plus",
+      "previousVersion": "8.9.9",
+      "version": "8.9.9.1",
+      "evidence": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/tag/v8.9.9.1",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "visual-studio-code",
+      "previousVersion": null,
+      "version": "1.146.0",
+      "evidence": "https://github.com/microsoft/vscode/releases/tag/1.146.0",
+      "method": "Official GitHub stable release, draft=false and prerelease=false"
+    },
+    {
+      "slug": "libreoffice",
+      "previousVersion": "26.8.2",
+      "version": "26.8.3",
+      "evidence": "https://www.libreoffice.org/download/",
+      "method": "Official page reviewed via web tool; local automated access remains unavailable"
+    },
+    {
+      "slug": "hwinfo",
+      "previousVersion": "8.54",
+      "version": "8.60",
+      "evidence": "https://www.hwinfo.com/download/",
+      "method": "Official page reviewed via web tool; local automated access remains unavailable"
+    },
+    {
+      "slug": "vlc",
+      "previousVersion": "3.0.23",
+      "version": "3.0.24",
+      "evidence": "https://download.videolan.org/pub/videolan/vlc/last/win64/",
+      "method": "Official page reviewed via web tool; local automated access remains unavailable"
+    },
+    {
+      "slug": "kate",
+      "previousVersion": null,
+      "version": null,
+      "evidence": "https://kate-editor.org/get-it/",
+      "method": "Official page reviewed via web tool; local automated access remains unavailable"
+    }
+  ],
+  "remaining": [
+    "Automated requests still fail for HWiNFO (403), Kate, LibreOffice, OBS and VLC (timeout); network checks are not marked passed.",
+    "Kate direct Windows installer is nightly; stableVersion remains null.",
+    "Windows installer and first-run checks remain pending for all apps.",
+    "Release dates without explicit announcement evidence remain null."
+  ],
+  "scope": "Official source and version review only; no binaries downloaded or installed."
+}

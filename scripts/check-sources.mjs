@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { compareReleaseVersion } from "./lib/release-version.mjs";
 
 const apps = JSON.parse(await readFile(new URL("../src/data/apps.json", import.meta.url), "utf8"));
 const reportPath = process.env.SOURCE_CHECK_REPORT ?? join(tmpdir(), "adfree-source-check.json");
@@ -13,12 +14,6 @@ const describeError = (error) => {
   return cause ? `${error.message} (${cause})` : error.message;
 };
 
-const normalizeVersion = (value) =>
-  value
-    ?.trim()
-    .replace(/^v/i, "")
-    .replace(/^release[-_]/i, "")
-    .replace(/_(?:stable|beta|canary)_\d{4}-\d{2}-\d{2}$/i, "") ?? null;
 const request = async (url, headers = {}) => {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -75,11 +70,18 @@ const checkApp = async (app) => {
       if (response.ok) {
         const release = await response.json();
         result.observedVersion = release.tag_name ?? null;
-        if (app.stableVersion && normalizeVersion(result.observedVersion) !== normalizeVersion(app.stableVersion)) {
+        const comparison = compareReleaseVersion(app.stableVersion, result.observedVersion, app.slug);
+        if (comparison === "changed") {
           result.status = "review";
           result.messages.push(`stable release changed: recorded ${app.stableVersion}, observed ${result.observedVersion}`);
+        } else if (comparison === "unrecorded") {
+          result.status = "review";
+          result.messages.push(`stable release needs recording: observed ${result.observedVersion}`);
+        } else if (comparison === "unavailable") {
+          result.status = "review";
+          result.messages.push("GitHub release response did not include a version tag");
         }
-      } else if (response.status !== 404) {
+      } else {
         result.status = "review";
         result.messages.push(`GitHub release API returned HTTP ${response.status}`);
       }

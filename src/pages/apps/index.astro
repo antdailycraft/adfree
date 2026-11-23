@@ -164,6 +164,7 @@ const recentChecks = [...sourceConfirmedApps]
   </section>
 
   <script>
+    import { matchesSearch, normalizeSearchText } from "../../lib/search";
     const form = document.querySelector<HTMLFormElement>("[data-catalog-form]");
     const homeForm = document.querySelector<HTMLFormElement>("[data-home-search]");
     const homeQuery = document.querySelector<HTMLInputElement>("[data-home-query]");
@@ -177,20 +178,19 @@ const recentChecks = [...sourceConfirmedApps]
     const empty = document.querySelector<HTMLElement>("[data-catalog-empty]");
     let category = "all";
 
-    const normalize = (value: string) => value.normalize("NFKC").toLocaleLowerCase("ko-KR").trim();
     const setCategory = (next: string) => {
       category = next;
       categoryButtons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.categoryFilter === category)));
       if (categorySelect) categorySelect.value = category;
     };
     const applyFilters = () => {
-      const query = normalize(queryInput?.value ?? "");
+      const query = normalizeSearchText(queryInput?.value ?? "");
       const source = sourceSelect?.value ?? "all";
       const portableOnly = portableInput?.checked ?? false;
       let visible = 0;
 
       items.forEach((item) => {
-        const matchesQuery = !query || normalize(item.dataset.search ?? "").includes(query);
+        const matchesQuery = matchesSearch(item.dataset.search ?? "", query);
         const matchesCategory = category === "all" || item.dataset.category === category;
         const matchesSource = source === "all" || item.dataset.source === source;
         const matchesPortable = !portableOnly || item.dataset.portable === "yes";
@@ -202,12 +202,13 @@ const recentChecks = [...sourceConfirmedApps]
       if (resultCount) resultCount.textContent = String(visible);
       if (empty) empty.hidden = visible !== 0;
 
-      const params = new URLSearchParams();
+      const params = new URLSearchParams(window.location.search);
+      ["q", "category", "source", "portable"].forEach((key) => params.delete(key));
       if (query) params.set("q", queryInput?.value.trim() ?? "");
       if (category !== "all") params.set("category", category);
       if (source !== "all") params.set("source", source);
       if (portableOnly) params.set("portable", "1");
-      const url = `${window.location.pathname}${params.size ? `?${params}` : ""}`;
+      const url = `${window.location.pathname}${params.size ? `?${params}` : ""}${window.location.hash}`;
       history.replaceState(null, "", url);
     };
     const reset = () => {

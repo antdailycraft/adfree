@@ -2,6 +2,7 @@
 import { apps } from "../data/apps";
 import { categoryById } from "../data/categories";
 import { withBase } from "../lib/paths";
+import { createSearchText } from "../lib/search";
 
 const searchIndex = apps.map((app) => ({
   name: app.name,
@@ -9,6 +10,7 @@ const searchIndex = apps.map((app) => ({
   category: categoryById[app.category].label,
   href: withBase(`apps/${app.slug}/`),
   sourceStatus: app.sourceStatus,
+  searchText: createSearchText(app, categoryById[app.category]),
 }));
 ---
 
@@ -20,50 +22,74 @@ const searchIndex = apps.map((app) => ({
         <path d="m16 16 4 4"></path>
       </svg>
       <label class="sr-only" for="command-input" id="command-title">앱 검색</label>
-      <input id="command-input" type="search" autocomplete="off" placeholder="예: 압축, PDF, ShareX" data-command-input />
+      <input id="command-input" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="command-results" aria-describedby="command-hint" autocomplete="off" placeholder="예: 압축, PDF, ShareX" data-command-input />
       <button type="button" class="command-dialog__close" data-command-close aria-label="검색 닫기">닫기</button>
     </div>
     <p class="command-dialog__hint" id="command-hint">앱 이름과 용도로 검색합니다. 위·아래 방향키로 이동할 수 있습니다.</p>
-    <div class="command-dialog__results" role="listbox" aria-describedby="command-hint" data-command-results></div>
+    <p class="sr-only" role="status" data-command-count></p>
+    <div id="command-results" class="command-dialog__results" role="listbox" aria-label="앱 검색 결과" data-command-results></div>
   </div>
 </dialog>
 
-<script type="application/json" id="app-search-data" is:inline set:html={JSON.stringify(searchIndex)} />
+<script type="application/json" id="app-search-data" is:inline set:html={JSON.stringify(searchIndex).replace(/</g, "\\u003c")} />
 <script>
+  import { matchesSearch, searchRank } from "../lib/search";
+  interface SearchItem {
+    name: string;
+    category: string;
+    href: string;
+    sourceStatus: string;
+    searchText: string;
+  }
   const dialog = document.querySelector<HTMLDialogElement>("[data-command-dialog]");
   const input = document.querySelector<HTMLInputElement>("[data-command-input]");
   const results = document.querySelector<HTMLElement>("[data-command-results]");
   const source = document.querySelector<HTMLScriptElement>("#app-search-data");
-  const index = source ? JSON.parse(source.textContent || "[]") : [];
+  const index: SearchItem[] = source ? JSON.parse(source.textContent || "[]") : [];
+  const count = document.querySelector<HTMLElement>("[data-command-count]");
   let activeIndex = 0;
 
-  const normalize = (value: string) => value.normalize("NFKC").toLocaleLowerCase("ko-KR").trim();
   const visibleResults = () => Array.from(results?.querySelectorAll<HTMLAnchorElement>("a") ?? []);
 
   const render = () => {
     if (!results || !input) return;
-    const query = normalize(input.value);
+    const query = input.value;
     const matches = index
-      .filter((item: { name: string; summary: string; category: string }) =>
-        normalize(`${item.name} ${item.summary} ${item.category}`).includes(query),
-      )
-      .slice(0, 8);
-    activeIndex = Math.min(activeIndex, Math.max(matches.length - 1, 0));
+      .filter((item) => matchesSearch(item.searchText, query))
+      .sort((left, right) => searchRank(right.name, query) - searchRank(left.name, query));
+    activeIndex = 0;
+    input.removeAttribute("aria-activedescendant");
+    if (count) count.textContent = `검색 결과 ${matches.length}개`;
+    results.replaceChildren();
+    results.scrollTop = 0;
 
     if (matches.length === 0) {
-      results.innerHTML = `<p class="command-dialog__empty">일치하는 후보가 없습니다. 다른 용도나 앱 이름으로 검색해 보세요.</p>`;
+      const empty = document.createElement("p");
+      empty.className = "command-dialog__empty";
+      empty.textContent = "일치하는 후보가 없습니다. 다른 용도나 앱 이름으로 검색해 보세요.";
+      results.append(empty);
       return;
     }
 
-    results.innerHTML = matches
-      .map(
-        (item: { name: string; summary: string; category: string; href: string; sourceStatus: string }, itemIndex: number) => `
-          <a href="${item.href}" role="option" aria-selected="${itemIndex === activeIndex}" class="${itemIndex === activeIndex ? "is-active" : ""}">
-            <span><strong>${item.name}</strong><small>${item.category}</small></span>
-            <span class="command-dialog__status">${item.sourceStatus === "confirmed" ? "공식 출처 확인" : "출처 검토 중"}</span>
-          </a>`,
-      )
-      .join("");
+    matches.forEach((item, itemIndex) => {
+      const link = document.createElement("a");
+      link.href = item.href;
+      link.id = `command-option-${itemIndex}`;
+      link.setAttribute("role", "option");
+      link.tabIndex = -1;
+      const identity = document.createElement("span");
+      const name = document.createElement("strong");
+      name.textContent = item.name;
+      const category = document.createElement("small");
+      category.textContent = item.category;
+      identity.append(name, category);
+      const status = document.createElement("span");
+      status.className = "command-dialog__status";
+      status.textContent = item.sourceStatus === "confirmed" ? "공식 출처 확인" : "출처 검토 중";
+      link.append(identity, status);
+      results.append(link);
+    });
+    setActive(0);
   };
 
   const setActive = (next: number) => {
@@ -75,31 +101,41 @@ const searchIndex = apps.map((app) => ({
       item.classList.toggle("is-active", active);
       item.setAttribute("aria-selected", String(active));
     });
+    input?.setAttribute("aria-activedescendant", items[activeIndex]!.id);
     items[activeIndex]?.scrollIntoView({ block: "nearest" });
   };
 
   const open = () => {
-    if (!dialog || !input) return;
+    if (!dialog || !input || dialog.open) return;
     dialog.showModal();
-    document.querySelector("main")?.setAttribute("inert", "");
-    document.querySelector("footer")?.setAttribute("inert", "");
+    input.setAttribute("aria-expanded", "true");
     input.value = "";
     activeIndex = 0;
     render();
     requestAnimationFrame(() => input.focus());
   };
 
+  const resetDialogState = () => {
+    input?.setAttribute("aria-expanded", "false");
+    input?.removeAttribute("aria-activedescendant");
+  };
+
   const close = () => {
     if (!dialog?.open) return;
+    resetDialogState();
     dialog.close();
-    document.querySelector("main")?.removeAttribute("inert");
-    document.querySelector("footer")?.removeAttribute("inert");
   };
 
   document.querySelectorAll("[data-command-open]").forEach((trigger) => trigger.addEventListener("click", open));
   document.querySelectorAll("[data-command-close]").forEach((trigger) => trigger.addEventListener("click", close));
   input?.addEventListener("input", render);
   input?.addEventListener("keydown", (event) => {
+    if (event.isComposing) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      close();
+      return;
+    }
     if (event.key === "ArrowDown") {
       event.preventDefault();
       setActive(activeIndex + 1);
@@ -126,7 +162,8 @@ const searchIndex = apps.map((app) => ({
     if (event.target === dialog) close();
   });
   dialog?.addEventListener("close", () => {
-    document.querySelector("main")?.removeAttribute("inert");
-    document.querySelector("footer")?.removeAttribute("inert");
+    // Native modal dialogs block background interaction; avoid mutating its inert state.
+    // A queued close event may arrive after the user has already reopened the dialog.
+    if (!dialog.open) resetDialogState();
   });
 </script>

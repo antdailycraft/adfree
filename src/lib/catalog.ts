@@ -1,5 +1,8 @@
 import type { AppRecord } from "../data/apps";
 import type { CategoryId } from "../data/categories";
+import { categoryById } from "../data/categories";
+import { createSearchText, matchesSearch } from "./search";
+export { normalizeSearchText } from "./search";
 
 export interface CatalogFilters {
   query?: string;
@@ -8,17 +11,9 @@ export interface CatalogFilters {
   portableOnly?: boolean;
 }
 
-export const normalizeSearchText = (value: string) =>
-  value.normalize("NFKC").trim().toLocaleLowerCase("ko-KR");
-
 export const filterApps = (apps: AppRecord[], filters: CatalogFilters) => {
-  const query = normalizeSearchText(filters.query ?? "");
-
   return apps.filter((app) => {
-    const haystack = normalizeSearchText(
-      [app.name, app.summary, app.editorNote, app.license].join(" "),
-    );
-    const matchesQuery = !query || haystack.includes(query);
+    const matchesQuery = matchesSearch(createSearchText(app, categoryById[app.category]), filters.query ?? "");
     const matchesCategory =
       !filters.category ||
       filters.category === "all" ||

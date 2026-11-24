@@ -31,6 +31,16 @@
       "category": "이미지 소재",
       "status": "saved_for_later",
       "adFreeStatus": "unverified"
+    },
+    {
+      "name": "Chrome 원격 데스크톱",
+      "url": "https://remotedesktop.google.com/",
+      "category": "원격 데스크톱",
+      "status": "saved_for_later",
+      "adFreeStatus": "unverified",
+      "source": "사용자 제공 원격 데스크톱 목록 (2026-11-24)",
+      "evidence": "https://support.google.com/chrome/answer/1649523",
+      "note": "웹 접속과 호스트 앱 설치가 결합된 서비스. Google 계정·조직 정책·무광고 여부 추가 검토 필요."
     }
   ],
   "reviewBeforeListing": [

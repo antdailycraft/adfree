@@ -878,10 +878,10 @@
     "slug": "visual-studio-code",
     "name": "Visual Studio Code",
     "category": "text",
-    "summary": "확장 기능을 지원하는 Microsoft의 무료 코드 편집기입니다.",
-    "editorNote": "Microsoft 공식 페이지에서 Windows User·System Installer·ZIP 배포를 확인했습니다. 배포판 라이선스와 텔레메트리는 오픈소스 저장소와 구분합니다.",
-    "license": "프리웨어",
-    "commercialUse": "확인 필요",
+    "summary": "Git 변경 관리와 확장 기능을 지원하는 Microsoft의 무료 코드 편집기입니다.",
+    "editorNote": "Windows User·System Installer·ZIP 배포를 확인했습니다. Git GUI 기능은 이 항목에 포함합니다. 소스 저장소는 MIT이지만 Microsoft 공식 배포판은 제품 라이선스가 적용되며, 공식 FAQ에서 개인·상업적 무료 사용을 확인했습니다. 텔레메트리와 선택형 Copilot 서비스는 별도로 구분합니다.",
+    "license": "프리웨어 (Microsoft 제품 라이선스; 소스 코드는 MIT)",
+    "commercialUse": "개인·상업적 무료 사용 가능. 선택형 Copilot 서비스의 요금·조건은 별도",
     "accountRequired": false,
     "portable": "yes",
     "homepage": "https://code.visualstudio.com/",
@@ -897,7 +897,8 @@
       "https://code.visualstudio.com/",
       "https://code.visualstudio.com/download",
       "https://github.com/microsoft/vscode/releases/tag/1.146.0",
-      "https://code.visualstudio.com/updates/v1_146"
+      "https://code.visualstudio.com/updates/v1_146",
+      "https://code.visualstudio.com/docs/supporting/faq"
     ],
     "installerStatus": "pending",
     "installerCheckedAt": null,
@@ -1004,6 +1005,419 @@
     "releaseSource": {
       "kind": "github",
       "repo": "obsidianmd/obsidian-releases"
+    }
+  },
+  {
+    "slug": "wave-terminal",
+    "name": "Wave Terminal",
+    "category": "system",
+    "summary": "터미널, SSH 연결, 파일 미리보기와 편집을 한 작업 공간에서 사용하는 도구입니다.",
+    "editorNote": "무료 오픈소스 앱과 공식 Windows 배포 경로를 확인했습니다. 무광고 명시 근거와 Windows 설치·첫 실행 검증은 아직 없어 Adfree 엠블럼은 부여하지 않았습니다. 선택형 외부 AI 서비스는 별도 비용이 발생할 수 있습니다. 사용 통계 수집은 설정에서 끌 수 있으며, 별도 진단 통신을 끄려면 WAVETERM_NOPING 환경변수 설정이 필요합니다.",
+    "license": "Apache-2.0",
+    "commercialUse": "개인·상업적 사용 가능. 외부 AI 서비스의 요금과 약관은 별도",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://www.waveterm.dev/",
+    "downloadPage": "https://www.waveterm.dev/download",
+    "officialHosts": ["www.waveterm.dev", "github.com"],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://www.waveterm.dev/download",
+      "https://github.com/wavetermdev/waveterm",
+      "https://github.com/wavetermdev/waveterm/blob/main/LICENSE",
+      "https://github.com/wavetermdev/waveterm/releases/tag/v0.14.5",
+      "https://docs.waveterm.dev/telemetry"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "0.14.5",
+    "releaseDate": "2026-04-16",
+    "releaseSource": { "kind": "github", "repo": "wavetermdev/waveterm" }
+  },
+  {
+    "slug": "herdr",
+    "name": "Herdr",
+    "category": "system",
+    "summary": "여러 코딩 에이전트와 터미널을 관리하고 SSH로 다른 컴퓨터의 작업에 연결하는 앱입니다.",
+    "editorNote": "무료 오픈소스 데스크톱 앱의 공식 Windows x86_64 설치 경로를 확인했습니다. 설치 스크립트가 참조하는 배포 목록의 버전은 0.1.17이지만 안정판 구분과 출시일은 확인하지 못했습니다. 공식 무광고 문구는 모바일 앱에 대한 설명이므로 데스크톱 엠블럼 근거로 사용하지 않았습니다. 데스크톱의 익명 사용 통계는 설정에서 끌 수 있습니다. Windows 설치·첫 실행은 검증 대기이며, 연결하는 AI 서비스의 비용과 계정은 별도입니다.",
+    "license": "Apache-2.0",
+    "commercialUse": "개인·상업적 사용 가능. 연결하는 코딩 에이전트와 AI 서비스의 요금·약관은 별도",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://herdr.dev/",
+    "downloadPage": "https://herdr.dev/download/",
+    "officialHosts": ["herdr.dev", "releases.herdr.dev", "github.com"],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://herdr.dev/download/",
+      "https://github.com/herdrdev/herdr-app",
+      "https://herdr.dev/privacy/",
+      "https://releases.herdr.dev/app/latest.json"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": null,
+    "releaseDate": null,
+    "releaseSource": { "kind": "page" }
+  },
+  {
+    "slug": "windows-terminal",
+    "name": "Windows Terminal",
+    "category": "system",
+    "summary": "PowerShell, 명령 프롬프트와 WSL을 탭과 분할 창에서 사용하는 Microsoft의 터미널 앱입니다.",
+    "editorNote": "Microsoft 공식 저장소의 MIT 라이선스와 Preview가 아닌 안정판 배포를 확인했습니다. GitHub 배포는 Microsoft Store 없이 받을 수 있지만 자동 업데이트는 지원하지 않습니다. 무광고 명시 근거와 Windows 설치·첫 실행 검증을 아직 확보하지 않아 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "MIT",
+    "commercialUse": "개인·상업적 사용 가능",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://github.com/microsoft/terminal",
+    "downloadPage": "https://github.com/microsoft/terminal/releases/latest",
+    "officialHosts": ["github.com", "learn.microsoft.com"],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://github.com/microsoft/terminal",
+      "https://github.com/microsoft/terminal/blob/main/LICENSE",
+      "https://learn.microsoft.com/en-us/windows/terminal/install",
+      "https://github.com/microsoft/terminal/releases/tag/v1.25.3131.0"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "1.25.3131.0",
+    "releaseDate": "2026-11-11",
+    "releaseSource": { "kind": "github", "repo": "microsoft/terminal" }
+  },
+  {
+    "slug": "mobaxterm",
+    "name": "MobaXterm Home Edition",
+    "category": "system",
+    "summary": "SSH, RDP, VNC와 X 서버를 함께 제공하는 Windows 원격 접속 도구입니다.",
+    "editorNote": "무료 Home Edition만 대상으로 공식 배포와 라이선스를 확인했습니다. 저장 세션 12개, SSH 터널 2개, 매크로 4개 등의 제한이 있으며 Professional Edition은 유료입니다. 무광고 명시 근거와 Windows 설치·첫 실행 검증은 확보하지 못해 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "프리웨어 (Mobatek Home Edition EULA)",
+    "commercialUse": "공식 Home Edition 약관은 사용 분야를 제한하지 않음. 기업 배포·맞춤 설정은 Professional Edition 조건 별도 확인",
+    "accountRequired": false,
+    "portable": "yes",
+    "homepage": "https://mobaxterm.mobatek.net/",
+    "downloadPage": "https://mobaxterm.mobatek.net/download-home-edition.html",
+    "officialHosts": ["mobaxterm.mobatek.net", "download.mobatek.net"],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://mobaxterm.mobatek.net/download.html",
+      "https://mobaxterm.mobatek.net/download-home-edition.html",
+      "https://mobaxterm.mobatek.net/license.html"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "26.6",
+    "releaseDate": "2026-10-25",
+    "releaseSource": { "kind": "page" }
+  },
+  {
+    "slug": "winscp",
+    "name": "WinSCP",
+    "category": "files",
+    "summary": "SFTP, SCP와 FTP로 원격 파일을 전송하고 폴더를 동기화하는 Windows 도구입니다.",
+    "editorNote": "공식 사이트의 무료 배포판과 포터블 배포를 확인했습니다. 다운로드 웹페이지에는 광고가 있습니다. 공식 관리자는 2020년에 앱에 애드웨어가 없다고 답변했지만, 이를 현재 설치기의 광고·제휴 프로그램 부재 검증으로 간주하지 않았습니다. Windows 설치·첫 실행 검증 전이므로 Adfree 엠블럼은 부여하지 않았습니다. 원격 서버 접속 계정은 별도로 필요할 수 있습니다.",
+    "license": "GPL-3.0-or-later",
+    "commercialUse": "개인·상업적 사용 가능. 공식 웹사이트 무료 배포판 기준",
+    "accountRequired": false,
+    "portable": "yes",
+    "homepage": "https://winscp.net/",
+    "downloadPage": "https://winscp.net/eng/downloads.php",
+    "officialHosts": ["winscp.net"],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://winscp.net/eng/downloads.php",
+      "https://winscp.net/eng/docs/license",
+      "https://winscp.net/eng/docs/installation",
+      "https://winscp.net/eng/docs/history",
+      "https://winscp.net/forum/viewtopic.php?t=29573"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "6.7.1",
+    "releaseDate": "2026-11-11",
+    "releaseSource": { "kind": "page" }
+  },
+  {
+    "slug": "openvpn",
+    "name": "OpenVPN Community Edition",
+    "category": "security",
+    "summary": "VPN 서버와 암호화된 네트워크 연결을 구성하는 도구입니다.",
+    "editorNote": "OpenVPN GUI가 포함된 Windows Community 설치판 기준입니다. 무료 VPN 서버를 제공하는 서비스는 아니며 서버·인증서·접속 설정이 필요합니다. Access Server와 CloudConnexa는 별도 제품입니다. Windows 설치·첫 실행 및 무광고 여부는 검증 대기이므로 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "GPL-2.0 (링크 예외 및 구성요소별 라이선스 별도)",
+    "commercialUse": "개인·상업적 사용 가능. 수정·배포 시 해당 라이선스 조건 준수",
+    "accountRequired": false,
+    "portable": "no",
+    "homepage": "https://openvpn.net/community/",
+    "downloadPage": "https://openvpn.net/community/",
+    "officialHosts": [
+      "openvpn.net"
+    ],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://openvpn.net/community/",
+      "https://github.com/OpenVPN/openvpn/blob/master/COPYING"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "2.7.9",
+    "releaseDate": "2026-11-05",
+    "releaseSource": {
+      "kind": "github",
+      "repo": "OpenVPN/openvpn"
+    }
+  },
+  {
+    "slug": "orca",
+    "name": "Orca",
+    "category": "system",
+    "summary": "여러 코딩 에이전트를 독립된 Git 작업 공간에서 실행하고 변경 내용을 검토하는 개발 도구입니다.",
+    "editorNote": "공식 웹사이트와 Windows 배포 경로를 확인했습니다. 연결하는 AI 서비스의 구독·API 사용료와 계정은 별도입니다. Windows 설치·첫 실행 및 무광고 여부는 검증 대기이므로 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "MIT",
+    "commercialUse": "개인·상업적 사용 가능. 수정·배포 시 해당 라이선스 조건 준수",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://orca.dev/",
+    "downloadPage": "https://github.com/stablyai/orca/releases/latest",
+    "officialHosts": [
+      "orca.dev",
+      "github.com"
+    ],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://orca.dev/",
+      "https://github.com/stablyai/orca"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "1.4.272",
+    "releaseDate": "2026-11-23",
+    "releaseSource": {
+      "kind": "github",
+      "repo": "stablyai/orca"
+    }
+  },
+  {
+    "slug": "paseo",
+    "name": "Paseo",
+    "category": "system",
+    "summary": "데스크톱과 모바일에서 여러 코딩 에이전트와 원격 작업 공간을 관리합니다.",
+    "editorNote": "Windows 배포와 라이선스 본문을 확인했습니다. AI 제공자의 계정·구독·API 비용은 별도입니다. Windows 설치·첫 실행 및 무광고 여부는 검증 대기이므로 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "Apache-2.0 (서드파티 구성요소 별도)",
+    "commercialUse": "개인·상업적 사용 가능. 수정·배포 시 해당 라이선스 조건 준수",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://paseo.sh/",
+    "downloadPage": "https://paseo.sh/download",
+    "officialHosts": [
+      "paseo.sh"
+    ],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://paseo.sh/download",
+      "https://github.com/getpaseo/paseo"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "0.17.4",
+    "releaseDate": "2026-11-23",
+    "releaseSource": {
+      "kind": "github",
+      "repo": "getpaseo/paseo"
+    }
+  },
+  {
+    "slug": "github-desktop",
+    "name": "GitHub Desktop",
+    "category": "system",
+    "summary": "Git 변경 사항, 커밋과 브랜치를 화면에서 관리하는 Windows·macOS 앱입니다.",
+    "editorNote": "로컬 Git 작업과 GitHub 로그인은 구분되며, 비공개 원격 저장소 접근에는 해당 계정의 권한이 필요합니다. Windows 설치·첫 실행 및 무광고 여부는 검증 대기이므로 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "MIT",
+    "commercialUse": "개인·상업적 사용 가능. 수정·배포 시 해당 라이선스 조건 준수",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://github.com/apps/desktop",
+    "downloadPage": "https://github.com/apps/desktop",
+    "officialHosts": [
+      "github.com"
+    ],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://github.com/apps/desktop",
+      "https://github.com/desktop/desktop",
+      "https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/using-multiple-accounts-in-github-desktop"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "3.6.11",
+    "releaseDate": "2026-11-16",
+    "releaseSource": {
+      "kind": "github",
+      "repo": "desktop/desktop"
+    }
+  },
+  {
+    "slug": "sourcetree",
+    "name": "Sourcetree",
+    "category": "system",
+    "summary": "Git 저장소의 변경 사항과 브랜치 이력을 시각적으로 관리하는 무료 클라이언트입니다.",
+    "editorNote": "Windows 배포판 기준입니다. 초기 등록에 계정이 필요하며 원격 저장소의 권한은 별도입니다. 오래된 기업용 라이선스 키 발급 안내는 현재 설치 절차로 사용하지 않았습니다. Windows 설치·첫 실행 및 무광고 여부는 검증 대기이므로 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "프리웨어 (Atlassian 제품 약관)",
+    "commercialUse": "무료 배포. 회사 도입 시 Atlassian 제품 약관과 조직의 계정·보안 정책 확인",
+    "accountRequired": true,
+    "portable": "unknown",
+    "homepage": "https://www.sourcetreeapp.com/",
+    "downloadPage": "https://www.sourcetreeapp.com/",
+    "officialHosts": [
+      "www.sourcetreeapp.com"
+    ],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://www.sourcetreeapp.com/",
+      "https://product-downloads.atlassian.com/software/sourcetree/windows/ga/ReleaseNotes_3.4.33.html",
+      "https://support.atlassian.com/sourcetree/kb/sourcetree-enterprise-and-msi-installation/"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "3.4.33",
+    "releaseDate": "2026-10-31",
+    "releaseSource": {
+      "kind": "page"
+    }
+  },
+  {
+    "slug": "tortoisegit",
+    "name": "TortoiseGit",
+    "category": "system",
+    "summary": "Windows 탐색기의 우클릭 메뉴와 파일 상태 아이콘으로 Git 저장소를 관리합니다.",
+    "editorNote": "공식 페이지에서 상업적 사용 허용을 확인했습니다. 다운로드 페이지의 오래된 상단 버전 대신 실제 설치 파일과 최신 공지를 기준으로 기록했습니다. 웹사이트의 광고 없음 안내는 앱의 근거와 구분했습니다. Windows 설치·첫 실행 및 무광고 여부는 검증 대기이므로 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "GPL-2.0",
+    "commercialUse": "개인·상업적 사용 가능. 수정·배포 시 해당 라이선스 조건 준수",
+    "accountRequired": false,
+    "portable": "no",
+    "homepage": "https://tortoisegit.org/",
+    "downloadPage": "https://tortoisegit.org/download/",
+    "officialHosts": [
+      "tortoisegit.org"
+    ],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://tortoisegit.org/",
+      "https://tortoisegit.org/about/",
+      "https://tortoisegit.org/download/",
+      "https://tortoisegit.org/legal/"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "2.19.2.0",
+    "releaseDate": "2026-11-18",
+    "releaseSource": {
+      "kind": "page"
+    }
+  },
+  {
+    "slug": "git-extensions",
+    "name": "Git Extensions",
+    "category": "system",
+    "summary": "Git 커밋 이력, 브랜치와 변경 파일을 화면에서 관리하는 Windows 클라이언트입니다.",
+    "editorNote": "현행 Windows 배포판 기준입니다. 홈페이지의 Mono 기반 다중 플랫폼 설명은 오래된 2.x 버전에 대한 안내입니다. Windows 설치·첫 실행 및 무광고 여부는 검증 대기이므로 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "GPL-3.0",
+    "commercialUse": "개인·상업적 사용 가능. 수정·배포 시 해당 라이선스 조건 준수",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://gitextensions.github.io/",
+    "downloadPage": "https://github.com/gitextensions/gitextensions/releases/latest",
+    "officialHosts": [
+      "gitextensions.github.io",
+      "github.com"
+    ],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://gitextensions.github.io/",
+      "https://github.com/gitextensions/gitextensions"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "7.2.1",
+    "releaseDate": "2026-08-18",
+    "releaseSource": {
+      "kind": "github",
+      "repo": "gitextensions/gitextensions"
+    }
+  },
+  {
+    "slug": "rustdesk",
+    "name": "RustDesk",
+    "category": "system",
+    "summary": "다른 컴퓨터의 화면을 제어하며 자체 중계 서버를 구성할 수 있는 원격 접속 도구입니다.",
+    "editorNote": "오픈소스 클라이언트와 무료 Server OSS 기준입니다. 중앙 관리 기능을 제공하는 Server Pro는 별도 유료 제품입니다. 자체 서버 운영 비용과 수정·배포에 따른 AGPL 의무는 별도입니다. Windows 설치·첫 실행 및 무광고 여부는 검증 대기이므로 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "AGPL-3.0",
+    "commercialUse": "개인·상업적 사용 가능. 수정·배포 시 해당 라이선스 조건 준수",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://rustdesk.com/",
+    "downloadPage": "https://github.com/rustdesk/rustdesk/releases/latest",
+    "officialHosts": [
+      "rustdesk.com",
+      "github.com"
+    ],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://rustdesk.com/",
+      "https://rustdesk.com/docs/en/self-host/",
+      "https://github.com/rustdesk/rustdesk/blob/master/LICENCE"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "1.5.3",
+    "releaseDate": "2026-11-09",
+    "releaseSource": {
+      "kind": "github",
+      "repo": "rustdesk/rustdesk"
+    }
+  },
+  {
+    "slug": "tigervnc",
+    "name": "TigerVNC",
+    "category": "system",
+    "summary": "VNC 서버에 연결해 원격 컴퓨터의 화면을 사용하는 오픈소스 클라이언트입니다.",
+    "editorNote": "Windows용 뷰어 배포 기준입니다. 운영체제별 뷰어·서버 지원은 다르므로 제어를 받는 컴퓨터의 VNC 서버 구성은 별도로 확인해야 합니다. Windows 설치·첫 실행 및 무광고 여부는 검증 대기이므로 Adfree 엠블럼은 부여하지 않았습니다.",
+    "license": "GPL-2.0",
+    "commercialUse": "개인·상업적 사용 가능. 수정·배포 시 해당 라이선스 조건 준수",
+    "accountRequired": false,
+    "portable": "unknown",
+    "homepage": "https://tigervnc.org/",
+    "downloadPage": "https://github.com/TigerVNC/tigervnc/releases/latest",
+    "officialHosts": [
+      "tigervnc.org",
+      "github.com"
+    ],
+    "sourceStatus": "confirmed",
+    "sourceCheckedAt": "2026-11-24",
+    "sourceEvidence": [
+      "https://tigervnc.org/",
+      "https://github.com/TigerVNC/tigervnc"
+    ],
+    "installerStatus": "pending",
+    "installerCheckedAt": null,
+    "stableVersion": "1.16.2",
+    "releaseDate": "2026-03-26",
+    "releaseSource": {
+      "kind": "github",
+      "repo": "TigerVNC/tigervnc"
     }
   }
 ]

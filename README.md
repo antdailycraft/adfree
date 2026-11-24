@@ -4,7 +4,7 @@
 
 광고·제휴 번들 없는 Windows 유틸리티를 찾고, 공식 다운로드 페이지와 검증 상태를 함께 보여주는 정적 사이트입니다.
 
-현재 저장소에는 10개 카테고리의 후보 32개가 들어 있습니다. 공식 출처를 확인한 기록과 Windows에서 설치기를 직접 확인한 기록을 분리합니다. macOS에서도 사이트 개발과 링크 자동 점검은 가능하지만, Windows 설치 검증을 수행하기 전에는 `설치 검증 완료` 상태를 부여하지 않습니다.
+현재 저장소에는 10개 카테고리의 후보 46개가 들어 있습니다. 공식 출처를 확인한 기록과 Windows에서 설치기를 직접 확인한 기록을 분리합니다. macOS에서도 사이트 개발과 링크 자동 점검은 가능하지만, Windows 설치 검증을 수행하기 전에는 `설치 검증 완료` 상태를 부여하지 않습니다.
 
 ## 로컬 실행
 
@@ -41,3 +41,9 @@ GitHub Actions는 매주 공식 페이지와 GitHub 안정판 변화를 감지�
 `main` 브랜치에 푸시하면 공식 Astro GitHub Pages 작업이 사이트를 빌드하고 배포합니다. GitHub 저장소 설정에서 Pages의 Source를 **GitHub Actions**로 선택해야 합니다.
 
 커스텀 도메인 `adfree.aidaon.com`의 루트(`/`)에서 서비스합니다. Actions 환경에서도 `base`는 `/`로 유지하며, `SITE_URL`을 지정하면 canonical·Open Graph·sitemap에 사용할 사이트 주소를 덮어쓸 수 있습니다. 기본 주소는 `https://adfree.aidaon.com`입니다.
+
+## 댓글 (Remark42)
+
+프로그램 상세 페이지에 익명 닉네임 댓글과 GitHub 로그인 댓글을 제공합니다. 로그인한 사용자는 프로필 사진과 이름이 표시됩니다. `src/components/Comments.astro`에서 서버 `https://api.aidaon.com/remark42`, 사이트 ID `adfree`를 사용합니다. 댓글 식별자는 미리보기 주소가 아닌 정식 페이지 URL입니다. 댓글 불러오기 버튼을 누른 뒤 외부 스크립트를 요청합니다.
+
+공통 서버 구성과 운영 안내는 인접한 `shared-services/deploy/remark42/`에 있습니다. 비밀키와 댓글 DB는 Git에 포함하지 않습니다.

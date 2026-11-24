@@ -1,0 +1,785 @@
+{
+  "7-zip": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://www.7-zip.org/",
+    "platformNote": "macOS·Linux에는 명령줄 버전 제공. Windows GUI와 구분합니다.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/7-zip-logo.png",
+      "source": "https://www.7-zip.org/",
+      "originalUrl": "https://www.7-zip.org/7ziplogo.png",
+      "alt": "7-Zip 제품 아이콘"
+    }
+  },
+  "peazip": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://peazip.github.io/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/peazip-logo.ico",
+      "source": "https://peazip.github.io/",
+      "originalUrl": "https://peazip.github.io/favicon.ico",
+      "alt": "PeaZip 제품 아이콘"
+    }
+  },
+  "nanazip": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://github.com/M2Team/NanaZip",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/nanazip-logo.png",
+      "source": "https://github.com/M2Team/NanaZip",
+      "originalUrl": "https://raw.githubusercontent.com/M2Team/NanaZip/main/Assets/NanaZip.png",
+      "alt": "NanaZip 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/nanazip-screenshot.jpg",
+      "source": "https://github.com/M2Team/NanaZip",
+      "originalUrl": "https://github.com/M2Team/NanaZip/raw/main/Documents/MainWindowLightMode.png",
+      "alt": "NanaZip 공식 예시 화면",
+      "width": 1440,
+      "height": 1085
+    }
+  },
+  "everything": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://www.voidtools.com/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/everything-logo.ico",
+      "source": "https://www.voidtools.com/",
+      "originalUrl": "https://www.voidtools.com/favicon.ico",
+      "alt": "Everything 제품 아이콘"
+    }
+  },
+  "explorer-plus-plus": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://explorerplusplus.com/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/explorer-plus-plus-logo.ico",
+      "source": "https://explorerplusplus.com/",
+      "originalUrl": "https://explorerplusplus.com/images/favicon.ico",
+      "alt": "Explorer++ 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/explorer-plus-plus-screenshot.jpg",
+      "source": "https://explorerplusplus.com/",
+      "originalUrl": "https://explorerplusplus.com/images/screenshots/screenshot-1-home.png",
+      "alt": "Explorer++ 공식 예시 화면",
+      "width": 1440,
+      "height": 782
+    }
+  },
+  "freecommander": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://freecommander.com/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24"
+  },
+  "sumatrapdf": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://www.sumatrapdfreader.org/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/sumatrapdf-logo.ico",
+      "source": "https://www.sumatrapdfreader.org/",
+      "originalUrl": "https://www.sumatrapdfreader.org/favicon.ico",
+      "alt": "SumatraPDF 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/sumatrapdf-screenshot.jpg",
+      "source": "https://www.sumatrapdfreader.org/",
+      "originalUrl": "https://files.sumatrapdfreader.org/assets/sumatrapdf/home-page-193b.png",
+      "alt": "SumatraPDF 공식 예시 화면",
+      "width": 1440,
+      "height": 1437
+    }
+  },
+  "pdf24-creator": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://tools.pdf24.org/",
+    "platformNote": "PDF24 Creator 데스크톱 앱 기준이며 웹 도구의 지원 OS와 다릅니다.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/pdf24-creator-logo.png",
+      "source": "https://tools.pdf24.org/",
+      "originalUrl": "https://tools.pdf24.org/static/img/appIcons/v3/icon_192.png?v=5ca75609",
+      "alt": "PDF24 Creator 제품 아이콘"
+    }
+  },
+  "libreoffice": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://www.libreoffice.org/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/libreoffice-logo.ico",
+      "source": "https://www.libreoffice.org/",
+      "originalUrl": "https://www.libreoffice.org/favicon.ico",
+      "alt": "LibreOffice 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/libreoffice-screenshot.jpg",
+      "source": "https://www.libreoffice.org/",
+      "originalUrl": "https://www.libreoffice.org/media/screenshot_writer.png",
+      "alt": "LibreOffice 공식 예시 화면",
+      "width": 1440,
+      "height": 1080
+    }
+  },
+  "vlc": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux",
+      "android",
+      "ios"
+    ],
+    "platformSource": "https://www.videolan.org/vlc/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/vlc-logo.svg",
+      "source": "https://www.videolan.org/vlc/",
+      "originalUrl": "https://images.videolan.org/images/icons-VLC/vlc.mini.svg",
+      "alt": "VLC media player 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/vlc-screenshot.jpg",
+      "source": "https://www.videolan.org/vlc/",
+      "originalUrl": "https://images.videolan.org/vlc/screenshots/3.0.0/3.0.17-windows11-fitted.jpg",
+      "alt": "VLC media player 공식 예시 화면",
+      "width": 1440,
+      "height": 1080
+    }
+  },
+  "foobar2000": {
+    "platforms": [
+      "windows",
+      "macos",
+      "android",
+      "ios"
+    ],
+    "platformSource": "https://www.foobar2000.org/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/foobar2000-logo.ico",
+      "source": "https://www.foobar2000.org/",
+      "originalUrl": "https://www.foobar2000.org/favicon.ico",
+      "alt": "foobar2000 제품 아이콘"
+    }
+  },
+  "mpc-be": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://sourceforge.net/projects/mpcbe/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/mpc-be-logo.png",
+      "source": "https://sourceforge.net/projects/mpcbe/",
+      "originalUrl": "https://a.fsdn.com/allura/p/mpcbe/icon?1708141122?&w=90",
+      "alt": "MPC-BE 제품 아이콘"
+    }
+  },
+  "gimp": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://www.gimp.org/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/gimp-logo.png",
+      "source": "https://www.gimp.org/",
+      "originalUrl": "https://www.gimp.org/images/wilber32.png",
+      "alt": "GIMP 제품 아이콘"
+    }
+  },
+  "paint-dot-net": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://www.getpaint.net/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/paint-dot-net-logo.png",
+      "source": "https://www.getpaint.net/",
+      "originalUrl": "https://www.getpaint.net/apple-touch-icon.png",
+      "alt": "paint.net 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/paint-dot-net-screenshot.jpg",
+      "source": "https://www.getpaint.net/",
+      "originalUrl": "https://www.getpaint.net/screenshots/pdn513_thumb.jpg",
+      "alt": "paint.net 공식 예시 화면",
+      "width": 1440,
+      "height": 851
+    }
+  },
+  "imageglass": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://imageglass.org/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/imageglass-logo.svg",
+      "source": "https://imageglass.org/",
+      "originalUrl": "https://imageglass.org/img/iglogo.svg",
+      "alt": "ImageGlass Classic 제품 아이콘"
+    }
+  },
+  "sharex": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://getsharex.com/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/sharex-logo.ico",
+      "source": "https://getsharex.com/",
+      "originalUrl": "https://getsharex.com/favicon.ico",
+      "alt": "ShareX 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/sharex-screenshot.jpg",
+      "source": "https://getsharex.com/",
+      "originalUrl": "https://getsharex.com/img/ShareX_Screenshot.png",
+      "alt": "ShareX 공식 예시 화면",
+      "width": 1440,
+      "height": 988
+    }
+  },
+  "obs-studio": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://obsproject.com/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/obs-studio-logo.png",
+      "source": "https://obsproject.com/",
+      "originalUrl": "https://obsproject.com/favicon-96x96.png",
+      "alt": "OBS Studio 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/obs-studio-screenshot.jpg",
+      "source": "https://obsproject.com/",
+      "originalUrl": "https://obsproject.com/assets/images/features-new/hero_32_1_1.png",
+      "alt": "OBS Studio 공식 예시 화면",
+      "width": 1440,
+      "height": 1145
+    }
+  },
+  "greenshot": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://getgreenshot.org/",
+    "platformNote": "무료 Windows 배포판 기준입니다.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/greenshot-logo.ico",
+      "source": "https://getgreenshot.org/",
+      "originalUrl": "https://getgreenshot.org/favicon.ico",
+      "alt": "Greenshot 제품 아이콘"
+    }
+  },
+  "duplicati": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://duplicati.com/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/duplicati-logo.png",
+      "source": "https://duplicati.com/",
+      "originalUrl": "https://framerusercontent.com/images/ZWHeS4PyfwvuYnww8N0zPxxyqs.png",
+      "alt": "Duplicati 제품 아이콘"
+    }
+  },
+  "kopia": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://kopia.io/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/kopia-logo.ico",
+      "source": "https://kopia.io/",
+      "originalUrl": "https://kopia.io/favicons/favicon.ico",
+      "alt": "Kopia 제품 아이콘"
+    }
+  },
+  "syncthing": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux",
+      "freebsd"
+    ],
+    "platformSource": "https://syncthing.net/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/syncthing-logo.png",
+      "source": "https://syncthing.net/",
+      "originalUrl": "https://syncthing.net/img/favicons/apple-touch-icon-152x152.png",
+      "alt": "Syncthing 제품 아이콘"
+    }
+  },
+  "keepassxc": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://keepassxc.org/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/keepassxc-logo.svg",
+      "source": "https://keepassxc.org/",
+      "originalUrl": "https://keepassxc.org/assets/img/keepassxc.svg",
+      "alt": "KeePassXC 제품 아이콘"
+    }
+  },
+  "keepass": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://keepass.info/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/keepass-logo.ico",
+      "source": "https://keepass.info/",
+      "originalUrl": "https://keepass.info/favicon.ico",
+      "alt": "KeePass 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/keepass-screenshot.jpg",
+      "source": "https://keepass.info/",
+      "originalUrl": "https://keepass.info/screenshots/keepass_2x/main.jpg",
+      "alt": "KeePass 공식 예시 화면",
+      "width": 1440,
+      "height": 1099
+    }
+  },
+  "veracrypt": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://veracrypt.io/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24"
+  },
+  "powertoys": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://learn.microsoft.com/windows/powertoys/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24"
+  },
+  "hwinfo": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://www.hwinfo.com/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24"
+  },
+  "crystaldiskinfo": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://crystalmark.info/en/software/crystaldiskinfo/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24"
+  },
+  "notepad-plus-plus": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://notepad-plus-plus.org/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/notepad-plus-plus-logo.png",
+      "source": "https://notepad-plus-plus.org/",
+      "originalUrl": "https://notepad-plus-plus.org/apple-touch-icon.png",
+      "alt": "Notepad++ 제품 아이콘"
+    }
+  },
+  "visual-studio-code": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://code.visualstudio.com/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/visual-studio-code-logo.png",
+      "source": "https://code.visualstudio.com/",
+      "originalUrl": "https://code.visualstudio.com/assets/branding/code-stable.png",
+      "alt": "Visual Studio Code 제품 아이콘"
+    }
+  },
+  "kate": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://kate-editor.org/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/kate-logo.png",
+      "source": "https://kate-editor.org/",
+      "originalUrl": "https://kate-editor.org/apple-touch-icon.png",
+      "alt": "Kate 제품 아이콘"
+    }
+  },
+  "marktext": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://github.com/marktext/marktext",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/marktext-logo.png",
+      "source": "https://github.com/marktext/marktext",
+      "originalUrl": "https://raw.githubusercontent.com/marktext/marktext/develop/docs/assets/logo-small.png",
+      "alt": "MarkText 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/marktext-screenshot.jpg",
+      "source": "https://github.com/marktext/marktext",
+      "originalUrl": "https://github.com/marktext/marktext/raw/develop/docs/assets/marktext.png?raw=true",
+      "alt": "MarkText 공식 예시 화면",
+      "width": 1440,
+      "height": 943
+    }
+  },
+  "obsidian": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux",
+      "android",
+      "ios"
+    ],
+    "platformSource": "https://obsidian.md/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/obsidian-logo.png",
+      "source": "https://obsidian.md/",
+      "originalUrl": "https://obsidian.md/apple-touch-icon.png",
+      "alt": "Obsidian 제품 아이콘"
+    }
+  },
+  "wave-terminal": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://www.waveterm.dev/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/wave-terminal-logo.png",
+      "source": "https://www.waveterm.dev/",
+      "originalUrl": "https://framerusercontent.com/images/s5BucbxyDs8yx011LSbM8r3zSQ.png",
+      "alt": "Wave Terminal 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/wave-terminal-screenshot.jpg",
+      "source": "https://www.waveterm.dev/",
+      "originalUrl": "https://framerusercontent.com/images/x5bWAS6lLI79RTC6t3JzVdzJX0.webp?width=3680&height=2382",
+      "alt": "Wave Terminal 공식 예시 화면",
+      "width": 1440,
+      "height": 932
+    }
+  },
+  "herdr": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux",
+      "android",
+      "ios"
+    ],
+    "platformSource": "https://herdr.dev/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/herdr-logo.png",
+      "source": "https://herdr.dev/",
+      "originalUrl": "https://herdr.dev/live/icons/herdr.png",
+      "alt": "Herdr 제품 아이콘"
+    }
+  },
+  "windows-terminal": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://github.com/microsoft/terminal",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/windows-terminal-logo.svg",
+      "source": "https://github.com/microsoft/terminal",
+      "originalUrl": "https://raw.githubusercontent.com/microsoft/terminal/main/res/terminal/Terminal.svg",
+      "alt": "Windows Terminal 제품 아이콘"
+    }
+  },
+  "mobaxterm": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://mobaxterm.mobatek.net/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/mobaxterm-logo.ico",
+      "source": "https://mobaxterm.mobatek.net/",
+      "originalUrl": "https://mobaxterm.mobatek.net/favicon.ico",
+      "alt": "MobaXterm Home Edition 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/mobaxterm-screenshot.jpg",
+      "source": "https://mobaxterm.mobatek.net/",
+      "originalUrl": "https://mobaxterm.mobatek.net/img/slider/MobaXterm.png",
+      "alt": "MobaXterm Professional Edition 공식 터미널 예시 화면 (등록 대상 Home Edition과 다름)",
+      "width": 1440,
+      "height": 830,
+      "caption": "공식 Professional Edition 예시입니다. 등록 대상인 무료 Home Edition과 기능·화면이 다를 수 있습니다."
+    }
+  },
+  "winscp": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://winscp.net/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/winscp-logo.ico",
+      "source": "https://winscp.net/",
+      "originalUrl": "https://winscp.net/favicon.ico",
+      "alt": "WinSCP 제품 아이콘"
+    }
+  },
+  "openvpn": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://openvpn.net/community/",
+    "platformNote": "이 목록은 Windows OpenVPN GUI 포함 설치판 기준입니다.",
+    "checkedAt": "2026-11-24"
+  },
+  "orca": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux",
+      "android",
+      "ios"
+    ],
+    "platformSource": "https://orca.dev/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/orca-logo.png",
+      "source": "https://orca.dev/",
+      "originalUrl": "https://orca.dev/apple-icon.png?apple-icon.1bzi3yx-bxriu.png",
+      "alt": "Orca 제품 아이콘"
+    }
+  },
+  "paseo": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux",
+      "android",
+      "ios"
+    ],
+    "platformSource": "https://paseo.sh/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/paseo-logo.svg",
+      "source": "https://paseo.sh/",
+      "originalUrl": "https://paseo.sh/favicon.svg",
+      "alt": "Paseo 제품 아이콘"
+    }
+  },
+  "github-desktop": {
+    "platforms": [
+      "windows",
+      "macos"
+    ],
+    "platformSource": "https://github.com/apps/desktop",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "screenshot": {
+      "src": "media/apps/github-desktop-screenshot.jpg",
+      "source": "https://github.com/apps/desktop",
+      "originalUrl": "https://images.ctfassets.net/8aevphvgewt8/3m1LMhekpQUyS0t2CzhCWF/8bc214fc510eeaa79504d9daa192bf6c/desktop-hero-bottom.webp?fm=webp",
+      "alt": "GitHub Desktop 공식 예시 화면",
+      "width": 1440,
+      "height": 988
+    },
+    "logo": {
+      "src": "media/apps/github-desktop-logo.png",
+      "source": "https://github.com/apps/desktop",
+      "originalUrl": "https://raw.githubusercontent.com/desktop/desktop/development/app/static/common/logo-64x64@2x.png",
+      "alt": "GitHub Desktop 제품 아이콘"
+    }
+  },
+  "sourcetree": {
+    "platforms": [
+      "windows",
+      "macos"
+    ],
+    "platformSource": "https://www.sourcetreeapp.com/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "screenshot": {
+      "src": "media/apps/sourcetree-screenshot.jpg",
+      "source": "https://www.sourcetreeapp.com/",
+      "originalUrl": "https://wac-cdn.atlassian.com/dam/jcr:580c367b-c240-453d-aa18-c7ced44324f9/hero-mac-screenshot.png?cdnVersion=3035",
+      "alt": "Sourcetree 공식 예시 화면",
+      "width": 1440,
+      "height": 905
+    }
+  },
+  "tortoisegit": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://tortoisegit.org/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/tortoisegit-logo.png",
+      "source": "https://tortoisegit.org/",
+      "originalUrl": "https://tortoisegit.org/images/apple-touch-icon.png",
+      "alt": "TortoiseGit 제품 아이콘"
+    }
+  },
+  "git-extensions": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://gitextensions.github.io/",
+    "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/git-extensions-logo.ico",
+      "source": "https://gitextensions.github.io/",
+      "originalUrl": "https://gitextensions.github.io/images/git-extensions-logo.ico",
+      "alt": "Git Extensions 제품 아이콘"
+    }
+  },
+  "rustdesk": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux",
+      "android",
+      "ios"
+    ],
+    "platformSource": "https://rustdesk.com/",
+    "platformNote": "모바일에서는 플랫폼별 원격 제어 기능이 다를 수 있습니다.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/rustdesk-logo.png",
+      "source": "https://rustdesk.com/",
+      "originalUrl": "https://rustdesk.com/_astro/apple-touch-icon.DNoXgPv7.png",
+      "alt": "RustDesk 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/rustdesk-screenshot.jpg",
+      "source": "https://rustdesk.com/",
+      "originalUrl": "https://rustdesk.com/main.png",
+      "alt": "RustDesk 공식 예시 화면",
+      "width": 1440,
+      "height": 808
+    }
+  },
+  "tigervnc": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://tigervnc.org/",
+    "platformNote": "뷰어 기준. 서버 지원 OS는 별도 확인이 필요합니다.",
+    "checkedAt": "2026-11-24",
+    "logo": {
+      "src": "media/apps/tigervnc-logo.png",
+      "source": "https://tigervnc.org/",
+      "originalUrl": "https://tigervnc.org/images/tigerlogo.png",
+      "alt": "TigerVNC 제품 아이콘"
+    }
+  }
+}

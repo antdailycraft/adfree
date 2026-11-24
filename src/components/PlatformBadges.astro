@@ -1,0 +1,25 @@
+---
+import { appMedia, platformLabels, type Platform } from "../data/app-media";
+interface Props { slug: string }
+const { slug } = Astro.props;
+const platforms = appMedia[slug]?.platforms ?? [];
+const paths: Record<Platform, string> = {
+  windows: "M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z",
+  macos: "M5 4h14v12H5z M2 20h20l-3-4H5z",
+  linux: "M3 4h18v16H3z M7 9l3 3-3 3 M13 15h4",
+  android: "M5 10h14v10H5z M5 10a7 7 0 0 1 14 0 M7 3l2 3 M17 3l-2 3 M9 8h.01 M15 8h.01",
+  ios: "M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z M10 18h4",
+  freebsd: "m12 2 9 5v10l-9 5-9-5V7z M3 7l9 5 9-5 M12 12v10",
+};
+---
+<ul class="platforms" aria-label="확인된 지원 운영체제">
+  {platforms.map(platform => <li>
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={paths[platform]} /></svg>
+    <span>{platformLabels[platform]}</span>
+  </li>)}
+</ul>
+<style>
+  .platforms { display: flex; flex-wrap: wrap; gap: .4rem .75rem; list-style: none; padding: 0; margin: .6rem 0 0; }
+  .platforms li { display: inline-flex; align-items: center; gap: .3rem; color: var(--color-ink-soft); font-size: .75rem; line-height: 1.6; }
+  .platforms svg { flex: none; }
+</style>

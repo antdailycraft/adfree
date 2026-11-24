@@ -9,23 +9,43 @@ const config = {
   locale: "ko",
   theme: "light",
   components: ["embed"],
+  custom_properties: {
+    "--primary-color": "21, 85, 213",
+    "--primary-brighter-color": "18, 69, 173",
+    "--primary-darker-color": "15, 54, 132",
+    "--color9": "#1555d5",
+    "--color15": "#1245ad",
+    "--color33": "#3373ee",
+    "--color29": "#1245ad",
+    "--color5": "#f1f5fc",
+    "--color3": "#e8effc",
+    "--color4": "#f1f5fc",
+    "--color40": "#bed0f5",
+    "--color43": "#d5e2fa",
+    "--color42": "#e8effc",
+    "--color47": "rgb(21 85 213 / .2)",
+    "--color48": "rgb(21 85 213 / .4)",
+    "--font-family": "'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif",
+  },
   show_email_subscription: false,
   show_telegram_subscription: false,
 };
 const standalone = new URL(`${config.host}/web/iframe.html`);
+standalone.searchParams.set("custom_properties", JSON.stringify(config.custom_properties));
 for (const key of ["host", "site_id", "url", "locale", "theme"] as const) standalone.searchParams.set(key, config[key]);
 ---
 <section class="comments" aria-labelledby="comments-heading">
   <h2 id="comments-heading">사용 후기와 의견</h2>
-  <p>닉네임으로 댓글을 남기거나 GitHub로 로그인하세요. 로그인하면 프로필 사진과 이름이 표시됩니다.</p>
-  <p class="comments-notice">댓글은 공개됩니다. 개인정보는 적지 마세요. 로그인 없이 작성한 닉네임은 본인 인증을 의미하지 않습니다.</p>
+  <p class="comments-intro">사용 경험이나 궁금한 점을 남겨주세요. 닉네임 또는 GitHub 계정으로 참여할 수 있습니다.</p>
   <div id="remark42" data-config={JSON.stringify(config)}></div>
-  <p class="comments-status" role="status">댓글 불러오기를 누르면 댓글 서버에 연결합니다.</p>
-  <button class="comments-load" type="button">댓글 불러오기</button>
-  <p class="comments-fallback"><a href={standalone.href} target="_blank" rel="noopener noreferrer">댓글 창 따로 열기 ↗</a></p>
+  <div class="comments-actions">
+    <button class="comments-load" type="button">댓글 보기</button>
+    <a class="comments-fallback" hidden href={standalone.href} target="_blank" rel="noopener noreferrer">새 창에서 댓글 열기 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M14 3h7v7M21 3 10 14M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5" /></svg></a>
+  </div>
+  <p class="comments-status" role="status"></p>
   <details class="comments-privacy">
     <summary>댓글 정보 처리 안내</summary>
-    <p>댓글과 닉네임, 로그인한 계정의 식별값과 프로필 사진은 Aidaon 운영 서버에 저장됩니다. 광고·추적 도구는 사용하지 않으며, 남용 방지를 위해 IP 주소를 변환한 식별값을 사용합니다. 댓글 삭제·신고는 댓글 메뉴를 이용하고, 직접 처리할 수 없는 경우 운영자에게 요청해 주세요.</p>
+    <p>댓글은 공개되며 개인정보를 적지 마세요. 익명 닉네임은 본인 인증을 의미하지 않습니다. GitHub 로그인 시 이름과 프로필 사진이 표시됩니다. 댓글과 닉네임, 로그인한 계정의 식별값과 프로필 사진은 Aidaon 운영 서버에 저장됩니다. 광고·추적 도구는 사용하지 않으며, 남용 방지를 위해 IP 주소를 변환한 식별값을 사용합니다. 댓글 삭제·신고는 댓글 메뉴를 이용하고, 직접 처리할 수 없는 경우 운영자에게 요청해 주세요.</p>
   </details>
   <noscript><p>댓글을 이용하려면 JavaScript를 켜주세요.</p></noscript>
 </section>
@@ -33,7 +53,9 @@ for (const key of ["host", "site_id", "url", "locale", "theme"] as const) standa
   const container = document.querySelector<HTMLElement>('#remark42');
   const button = document.querySelector<HTMLButtonElement>('.comments-load');
   const status = document.querySelector<HTMLElement>('.comments-status');
-  if (container && button && status) {
+  const fallback = document.querySelector<HTMLAnchorElement>('.comments-fallback');
+  const actions = document.querySelector<HTMLElement>('.comments-actions');
+  if (container && button && status && fallback && actions) {
     button.addEventListener('click', () => {
       if (button.disabled) return;
       button.disabled = true;
@@ -44,14 +66,24 @@ for (const key of ["host", "site_id", "url", "locale", "theme"] as const) standa
       script.type = 'module';
       script.src = `${config.host}/web/embed.mjs`;
       const fail = () => {
-        status.textContent = '댓글 서버에 연결하지 못했습니다. 잠시 후 페이지를 새로고침해 주세요.';
+        window.clearTimeout(timeout);
+        status.textContent = '댓글을 불러오지 못했습니다. 새 창에서 열거나 잠시 후 다시 방문해 주세요.';
         button.hidden = true;
+        fallback.hidden = false;
       };
-      script.onerror = fail;
-      script.onload = () => {
+      const timeout = window.setTimeout(fail, 20000);
+      const onReady = (event: MessageEvent) => {
+        const frame = container.querySelector('iframe');
+        if (event.origin !== new URL(config.host).origin || event.source !== frame?.contentWindow || event.data?.inited !== true) return;
+        window.clearTimeout(timeout);
+        window.removeEventListener('message', onReady);
         status.textContent = '';
         button.hidden = true;
+        fallback.hidden = true;
+        actions.hidden = true;
       };
+      window.addEventListener('message', onReady);
+      script.onerror = fail;
       document.head.append(script);
     });
   }
@@ -59,9 +91,18 @@ for (const key of ["host", "site_id", "url", "locale", "theme"] as const) standa
 <style>
   .comments { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #dce3ee; }
   .comments h2 { margin: 0 0 .75rem; font-size: 1.5rem; }
+  .comments-intro { max-width: 65ch; color: var(--color-ink-soft); margin-bottom: 1.25rem; }
   .comments p { font-size: .9375rem; line-height: 1.7; }
   .comments-notice, .comments-status, .comments-privacy { color: #52627b; }
-  .comments-load { margin-top: .75rem; padding: .75rem 1.25rem; border: 0; border-radius: .65rem; color: white; background: #1555d5; font: inherit; cursor: pointer; }
+  .comments-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
+  .comments-load, .comments-fallback { min-height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .625rem 1rem; border: 1px solid transparent; border-radius: .625rem; font: inherit; font-size: .875rem; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .comments-load { color: var(--color-white); background: var(--color-brand); }
+  .comments-load[hidden], .comments-fallback[hidden], .comments-actions[hidden] { display: none; }
+  .comments-fallback { color: var(--color-ink-soft); background: var(--color-white); border-color: var(--color-rule); }
+  .comments-status:empty { display: none; }
+  .comments-status { margin-top: .75rem; }
+  #remark42:not(:empty) + .comments-actions { margin-top: 1rem; }
+  @media (hover: hover) { .comments-load:hover { background: #1245ad; } .comments-fallback:hover { border-color: var(--color-brand); color: var(--color-brand); } }
   .comments-load:focus-visible { outline: 3px solid #6894ed; outline-offset: 3px; }
   .comments-load:disabled { opacity: .6; cursor: wait; }
   .comments-privacy { margin-top: 1rem; font-size: .8125rem; }

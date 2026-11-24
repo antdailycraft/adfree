@@ -13,6 +13,7 @@ export interface ProductImage {
   width?: number;
   height?: number;
   caption?: string;
+  provenance?: "documentation" | "capture";
 }
 export interface AppMedia {
   platforms: Platform[];

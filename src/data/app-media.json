@@ -13,6 +13,15 @@
       "source": "https://www.7-zip.org/",
       "originalUrl": "https://www.7-zip.org/7ziplogo.png",
       "alt": "7-Zip 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/7-zip-screenshot.jpg",
+      "source": "https://sourceforge.net/projects/sevenzip/",
+      "originalUrl": "https://a.fsdn.com/con/app/proj/sevenzip/screenshots/534500_4.png",
+      "alt": "7-Zip 공식 소개 화면",
+      "width": 700,
+      "height": 528,
+      "caption": "프로젝트가 공개한 이전 버전의 파일 관리자 화면입니다."
     }
   },
   "peazip": {
@@ -29,6 +38,14 @@
       "source": "https://peazip.github.io/",
       "originalUrl": "https://peazip.github.io/favicon.ico",
       "alt": "PeaZip 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/peazip-screenshot.jpg",
+      "source": "https://peazip.github.io/",
+      "originalUrl": "https://peazip.github.io/peazip.png",
+      "alt": "PeaZip 공식 소개 화면",
+      "width": 1026,
+      "height": 652
     }
   },
   "nanazip": {
@@ -65,6 +82,14 @@
       "source": "https://www.voidtools.com/",
       "originalUrl": "https://www.voidtools.com/favicon.ico",
       "alt": "Everything 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/everything-screenshot.jpg",
+      "source": "https://www.voidtools.com/",
+      "originalUrl": "https://www.voidtools.com/sssmall4.png",
+      "alt": "Everything 공식 소개 화면",
+      "width": 282,
+      "height": 239
     }
   },
   "explorer-plus-plus": {
@@ -95,7 +120,15 @@
     ],
     "platformSource": "https://freecommander.com/",
     "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
-    "checkedAt": "2026-11-24"
+    "checkedAt": "2026-11-24",
+    "screenshot": {
+      "src": "media/apps/freecommander-screenshot.jpg",
+      "source": "https://freecommander.com/en/screenshots/",
+      "originalUrl": "https://freecommander.com/wordpress/wp-content/gallery/screenshots_en/FcXE_UI2.png",
+      "alt": "freecommander 공식 소개 화면",
+      "width": 765,
+      "height": 662
+    }
   },
   "sumatrapdf": {
     "platforms": [
@@ -131,6 +164,14 @@
       "source": "https://tools.pdf24.org/",
       "originalUrl": "https://tools.pdf24.org/static/img/appIcons/v3/icon_192.png?v=5ca75609",
       "alt": "PDF24 Creator 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/pdf24-creator-screenshot.jpg",
+      "source": "https://tools.pdf24.org/",
+      "originalUrl": "https://tools.pdf24.org/static/img/creator/ui_toolbox_1_thumb.jpg?v=6273a4a0",
+      "alt": "PDF24 Creator 공식 소개 화면",
+      "width": 600,
+      "height": 366
     }
   },
   "libreoffice": {
@@ -198,6 +239,14 @@
       "source": "https://www.foobar2000.org/",
       "originalUrl": "https://www.foobar2000.org/favicon.ico",
       "alt": "foobar2000 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/foobar2000-screenshot.jpg",
+      "source": "https://www.foobar2000.org/screenshots",
+      "originalUrl": "https://www.foobar2000.org/images/screenshots-windows/example-layout.png",
+      "alt": "foobar2000 공식 소개 화면",
+      "width": 1151,
+      "height": 711
     }
   },
   "mpc-be": {
@@ -212,6 +261,15 @@
       "source": "https://sourceforge.net/projects/mpcbe/",
       "originalUrl": "https://a.fsdn.com/allura/p/mpcbe/icon?1708141122?&w=90",
       "alt": "MPC-BE 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/mpc-be-screenshot.jpg",
+      "source": "https://sourceforge.net/projects/mpcbe/",
+      "originalUrl": "https://a.fsdn.com/con/app/proj/mpcbe/screenshots/2013-01-12%202-11-28.jpg",
+      "alt": "MPC-BE 공식 소개 화면",
+      "width": 1046,
+      "height": 538,
+      "caption": "프로젝트가 공개한 이전 버전의 화면 예시입니다."
     }
   },
   "gimp": {
@@ -228,6 +286,14 @@
       "source": "https://www.gimp.org/",
       "originalUrl": "https://www.gimp.org/images/wilber32.png",
       "alt": "GIMP 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/gimp-screenshot.jpg",
+      "source": "https://www.gimp.org/release-notes/gimp-3.0.html",
+      "originalUrl": "https://www.gimp.org/release-notes/images/3.0-nde-example.jpg",
+      "alt": "GIMP 공식 소개 화면",
+      "width": 1440,
+      "height": 786
     }
   },
   "paint-dot-net": {
@@ -264,6 +330,14 @@
       "source": "https://imageglass.org/",
       "originalUrl": "https://imageglass.org/img/iglogo.svg",
       "alt": "ImageGlass Classic 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/imageglass-screenshot.jpg",
+      "source": "https://imageglass.org/",
+      "originalUrl": "https://imageglass.org/videos/feat_quick_browsing.webp",
+      "alt": "ImageGlass Classic 공식 소개 화면",
+      "width": 1440,
+      "height": 998
     }
   },
   "sharex": {
@@ -324,6 +398,14 @@
       "source": "https://getgreenshot.org/",
       "originalUrl": "https://getgreenshot.org/favicon.ico",
       "alt": "Greenshot 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/greenshot-screenshot.jpg",
+      "source": "https://getgreenshot.org/screenshots/",
+      "originalUrl": "https://getgreenshot.org/assets/screenshots/05-editor-highlighting-area.png",
+      "alt": "Greenshot 공식 소개 화면",
+      "width": 975,
+      "height": 652
     }
   },
   "duplicati": {
@@ -340,6 +422,14 @@
       "source": "https://duplicati.com/",
       "originalUrl": "https://framerusercontent.com/images/ZWHeS4PyfwvuYnww8N0zPxxyqs.png",
       "alt": "Duplicati 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/duplicati-screenshot.jpg",
+      "source": "https://docs.duplicati.com/getting-started/set-up-a-backup-in-the-ui",
+      "originalUrl": "https://docs.duplicati.com/~gitbook/image?url=https%3A%2F%2F2363712449-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F7cMJiGuXy340g9NzpxLY%252Fuploads%252Fgit-blob-ef3361e94ea0837eabdb75f23b142f6b98b5cef4%252Fsetup-backup-add-backup-light.png%3Falt%3Dmedia&width=768&dpr=3&quality=100&sign=4a493b3deb29034a829ba70d8d7f0b48&sv=3",
+      "alt": "Duplicati 공식 소개 화면",
+      "width": 1440,
+      "height": 822
     }
   },
   "kopia": {
@@ -356,6 +446,16 @@
       "source": "https://kopia.io/",
       "originalUrl": "https://kopia.io/favicons/favicon.ico",
       "alt": "Kopia 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/kopia-screenshot.jpg",
+      "source": "https://github.com/kopia/kopia/releases/tag/v0.23.1",
+      "originalUrl": "https://adfree.aidaon.com/media/apps/kopia-screenshot.jpg",
+      "alt": "Kopia 저장소 종류 선택 화면",
+      "width": 1280,
+      "height": 800,
+      "caption": "Kopia 0.23.1 웹 UI의 초기 화면을 macOS 임시 환경에서 직접 촬영했습니다. 실제 백업·복원은 수행하지 않았습니다.",
+      "provenance": "capture"
     }
   },
   "syncthing": {
@@ -373,6 +473,14 @@
       "source": "https://syncthing.net/",
       "originalUrl": "https://syncthing.net/img/favicons/apple-touch-icon-152x152.png",
       "alt": "Syncthing 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/syncthing-screenshot.jpg",
+      "source": "https://docs.syncthing.net/intro/getting-started.html",
+      "originalUrl": "https://docs.syncthing.net/_images/gs1.png",
+      "alt": "Syncthing 공식 소개 화면",
+      "width": 995,
+      "height": 643
     }
   },
   "keepassxc": {
@@ -389,6 +497,14 @@
       "source": "https://keepassxc.org/",
       "originalUrl": "https://keepassxc.org/assets/img/keepassxc.svg",
       "alt": "KeePassXC 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/keepassxc-screenshot.jpg",
+      "source": "https://keepassxc.org/screenshots/",
+      "originalUrl": "https://keepassxc.org/assets/img/screenshots/database_view.png",
+      "alt": "KeePassXC 공식 소개 화면",
+      "width": 1440,
+      "height": 1095
     }
   },
   "keepass": {
@@ -421,7 +537,15 @@
     ],
     "platformSource": "https://veracrypt.io/",
     "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
-    "checkedAt": "2026-11-24"
+    "checkedAt": "2026-11-24",
+    "screenshot": {
+      "src": "media/apps/veracrypt-screenshot.jpg",
+      "source": "https://veracrypt.io/en/Beginner%27s%20Tutorial.html",
+      "originalUrl": "https://veracrypt.io/en/Beginner's%20Tutorial_Image_001.jpg",
+      "alt": "VeraCrypt 공식 소개 화면",
+      "width": 565,
+      "height": 487
+    }
   },
   "powertoys": {
     "platforms": [
@@ -429,7 +553,16 @@
     ],
     "platformSource": "https://learn.microsoft.com/windows/powertoys/",
     "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
-    "checkedAt": "2026-11-24"
+    "checkedAt": "2026-11-24",
+    "screenshot": {
+      "src": "media/apps/powertoys-screenshot.jpg",
+      "source": "https://learn.microsoft.com/en-us/windows/powertoys/fancyzones",
+      "originalUrl": "https://learn.microsoft.com/en-us/windows/powertoys/images/fancyzones/settings.png",
+      "alt": "Microsoft PowerToys 공식 소개 화면",
+      "width": 1010,
+      "height": 1153,
+      "caption": "PowerToys의 FancyZones 창 배치 설정 화면입니다."
+    }
   },
   "hwinfo": {
     "platforms": [
@@ -437,7 +570,15 @@
     ],
     "platformSource": "https://www.hwinfo.com/",
     "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
-    "checkedAt": "2026-11-24"
+    "checkedAt": "2026-11-24",
+    "screenshot": {
+      "src": "media/apps/hwinfo-screenshot.jpg",
+      "source": "https://www.hwinfo.com/",
+      "originalUrl": "https://www.hwinfo.com/wp-content/uploads/2018/10/hwinfo-screen-1024x728.jpg",
+      "alt": "hwinfo 공식 소개 화면",
+      "width": 1024,
+      "height": 728
+    }
   },
   "crystaldiskinfo": {
     "platforms": [
@@ -445,7 +586,15 @@
     ],
     "platformSource": "https://crystalmark.info/en/software/crystaldiskinfo/",
     "platformNote": "공식 배포 안내 기준입니다. 버전별 최소 OS 조건은 다운로드 페이지에서 확인하세요.",
-    "checkedAt": "2026-11-24"
+    "checkedAt": "2026-11-24",
+    "screenshot": {
+      "src": "media/apps/crystaldiskinfo-screenshot.jpg",
+      "source": "https://crystalmark.info/en/software/crystaldiskinfo/",
+      "originalUrl": "https://crystalmark.info/wp-content/uploads/sites/3/CrystalDiskInfo8-en-300x250-1.png",
+      "alt": "CrystalDiskInfo 공식 소개 화면",
+      "width": 300,
+      "height": 250
+    }
   },
   "notepad-plus-plus": {
     "platforms": [
@@ -459,6 +608,15 @@
       "source": "https://notepad-plus-plus.org/",
       "originalUrl": "https://notepad-plus-plus.org/apple-touch-icon.png",
       "alt": "Notepad++ 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/notepad-plus-plus-screenshot.jpg",
+      "source": "https://github.com/notepad-plus-plus/npp-usermanual",
+      "originalUrl": "https://raw.githubusercontent.com/notepad-plus-plus/npp-usermanual/master/content/docs/images/view-rotate-1.png",
+      "alt": "Notepad++ 공식 소개 화면",
+      "width": 688,
+      "height": 304,
+      "caption": "공식 사용 설명서의 문서 분할 보기 예시입니다."
     }
   },
   "visual-studio-code": {
@@ -475,6 +633,14 @@
       "source": "https://code.visualstudio.com/",
       "originalUrl": "https://code.visualstudio.com/assets/branding/code-stable.png",
       "alt": "Visual Studio Code 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/visual-studio-code-screenshot.jpg",
+      "source": "https://code.visualstudio.com/docs/getstarted/userinterface",
+      "originalUrl": "https://code.visualstudio.com/assets/docs/editing/userinterface/hero.png",
+      "alt": "Visual Studio Code 공식 소개 화면",
+      "width": 1200,
+      "height": 796
     }
   },
   "kate": {
@@ -491,6 +657,15 @@
       "source": "https://kate-editor.org/",
       "originalUrl": "https://kate-editor.org/apple-touch-icon.png",
       "alt": "Kate 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/kate-screenshot.jpg",
+      "source": "https://kate-editor.org/",
+      "originalUrl": "https://kate-editor.org/images/kate-window.png",
+      "alt": "Kate 공식 소개 화면",
+      "width": 1280,
+      "height": 720,
+      "caption": "공식 사이트에 공개된 데스크톱 편집 화면입니다. OS에 따라 창 모양이 다를 수 있습니다."
     }
   },
   "marktext": {
@@ -533,6 +708,14 @@
       "source": "https://obsidian.md/",
       "originalUrl": "https://obsidian.md/apple-touch-icon.png",
       "alt": "Obsidian 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/obsidian-screenshot.jpg",
+      "source": "https://github.com/obsidianmd/obsidian-help",
+      "originalUrl": "https://raw.githubusercontent.com/obsidianmd/obsidian-help/master/en/Attachments/obsidian-graph-view.png",
+      "alt": "Obsidian 공식 소개 화면",
+      "width": 1440,
+      "height": 963
     }
   },
   "wave-terminal": {
@@ -575,6 +758,14 @@
       "source": "https://herdr.dev/",
       "originalUrl": "https://herdr.dev/live/icons/herdr.png",
       "alt": "Herdr 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/herdr-screenshot.jpg",
+      "source": "https://herdr.dev/",
+      "originalUrl": "https://herdr.dev/showcase/herdrdev-herdr-layout-examples-code-a517a6b7-tile.webp",
+      "alt": "Herdr 공식 소개 화면",
+      "width": 960,
+      "height": 600
     }
   },
   "windows-terminal": {
@@ -589,6 +780,14 @@
       "source": "https://github.com/microsoft/terminal",
       "originalUrl": "https://raw.githubusercontent.com/microsoft/terminal/main/res/terminal/Terminal.svg",
       "alt": "Windows Terminal 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/windows-terminal-screenshot.jpg",
+      "source": "https://github.com/microsoft/terminal",
+      "originalUrl": "https://raw.githubusercontent.com/microsoft/terminal/main/doc/images/panes.png",
+      "alt": "Windows Terminal 공식 소개 화면",
+      "width": 1440,
+      "height": 755
     }
   },
   "mobaxterm": {
@@ -626,6 +825,14 @@
       "source": "https://winscp.net/",
       "originalUrl": "https://winscp.net/favicon.ico",
       "alt": "WinSCP 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/winscp-screenshot.jpg",
+      "source": "https://winscp.net/eng/docs/screenshots",
+      "originalUrl": "https://winscp-static-746341.c.cdn77.org/data/media/screenshots/commander.png?v=152",
+      "alt": "WinSCP 공식 소개 화면",
+      "width": 761,
+      "height": 617
     }
   },
   "openvpn": {
@@ -634,7 +841,15 @@
     ],
     "platformSource": "https://openvpn.net/community/",
     "platformNote": "이 목록은 Windows OpenVPN GUI 포함 설치판 기준입니다.",
-    "checkedAt": "2026-11-24"
+    "checkedAt": "2026-11-24",
+    "screenshot": {
+      "src": "media/apps/openvpn-screenshot.jpg",
+      "source": "https://community.openvpn.net/Pages/OpenVPN-GUI-New",
+      "originalUrl": "https://community.openvpn.net/Pages/OpenVPN-GUI-New/main-2-connect.png",
+      "alt": "OpenVPN Community Edition 공식 소개 화면",
+      "width": 361,
+      "height": 284
+    }
   },
   "orca": {
     "platforms": [
@@ -652,6 +867,14 @@
       "source": "https://orca.dev/",
       "originalUrl": "https://orca.dev/apple-icon.png?apple-icon.1bzi3yx-bxriu.png",
       "alt": "Orca 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/orca-screenshot.jpg",
+      "source": "https://github.com/stablyai/orca",
+      "originalUrl": "https://raw.githubusercontent.com/stablyai/orca/main/docs/assets/readme-features/chat-or-terminal.poster.jpg",
+      "alt": "Orca 공식 소개 화면",
+      "width": 960,
+      "height": 600
     }
   },
   "paseo": {
@@ -670,6 +893,14 @@
       "source": "https://paseo.sh/",
       "originalUrl": "https://paseo.sh/favicon.svg",
       "alt": "Paseo 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/paseo-screenshot.jpg",
+      "source": "https://github.com/getpaseo/paseo",
+      "originalUrl": "https://paseo.sh/hero-mockup.png",
+      "alt": "Paseo 공식 소개 화면",
+      "width": 1440,
+      "height": 867
     }
   },
   "github-desktop": {
@@ -724,6 +955,14 @@
       "source": "https://tortoisegit.org/",
       "originalUrl": "https://tortoisegit.org/images/apple-touch-icon.png",
       "alt": "TortoiseGit 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/tortoisegit-screenshot.jpg",
+      "source": "https://tortoisegit.org/docs/tortoisegit/tgit-dug-showlog.html",
+      "originalUrl": "https://tortoisegit.org/docs/tortoisegit/images/LogMessages.png",
+      "alt": "TortoiseGit 공식 소개 화면",
+      "width": 741,
+      "height": 611
     }
   },
   "git-extensions": {
@@ -738,6 +977,15 @@
       "source": "https://gitextensions.github.io/",
       "originalUrl": "https://gitextensions.github.io/images/git-extensions-logo.ico",
       "alt": "Git Extensions 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/git-extensions-screenshot.jpg",
+      "source": "https://gitextensions.github.io/",
+      "originalUrl": "https://gitextensions.github.io/images/commitlog205.png",
+      "alt": "Git Extensions 공식 소개 화면",
+      "width": 1440,
+      "height": 954,
+      "caption": "공식 사이트의 이전 버전 커밋 기록 화면입니다."
     }
   },
   "rustdesk": {
@@ -780,6 +1028,16 @@
       "source": "https://tigervnc.org/",
       "originalUrl": "https://tigervnc.org/images/tigerlogo.png",
       "alt": "TigerVNC 제품 아이콘"
+    },
+    "screenshot": {
+      "src": "media/apps/tigervnc-screenshot.jpg",
+      "source": "https://documentation.suse.com/sles/15-SP7/html/SLES-all/cha-vnc.html",
+      "originalUrl": "https://documentation.suse.com/sles/15-SP7/html/SLES-all/images/vnc_connect.png",
+      "alt": "TigerVNC 연결 설정 화면",
+      "width": 450,
+      "height": 159,
+      "caption": "SUSE Linux Enterprise Server 공식 문서의 VNC 연결 예시입니다.",
+      "provenance": "documentation"
     }
   }
 }

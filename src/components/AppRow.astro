@@ -38,7 +38,7 @@ const searchText = createSearchText(app, categoryById[app.category]);
       <h3><a href={withBase(`apps/${app.slug}/`)}>{app.name}</a></h3>
       <PlatformBadges slug={app.slug} />
     </div>
-    <p>{app.summary}</p>
+    <p class="app-row__summary">{app.summary}</p>
   </div>
   <dl class="app-row__ledger">
     <div>

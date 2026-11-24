@@ -13,10 +13,10 @@ export default defineConfig({
   },
   vite: {
     server: {
-      allowedHosts: ["metis", "metis.local", "metis.tail04fe8.ts.net"],
+      allowedHosts: ["metis", "metis.local", "metis.tail04fe8.ts.net", "metis.aidaon.com"],
     },
     preview: {
-      allowedHosts: ["metis", "metis.local", "metis.tail04fe8.ts.net"],
+      allowedHosts: ["metis", "metis.local", "metis.tail04fe8.ts.net", "metis.aidaon.com"],
     },
     build: {
       cssMinify: "lightningcss",

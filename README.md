@@ -47,3 +47,12 @@ GitHub Actions는 매주 공식 페이지와 GitHub 안정판 변화를 감지�
 프로그램 상세 페이지에 익명 닉네임 댓글과 GitHub 로그인 댓글을 제공합니다. 로그인한 사용자는 프로필 사진과 이름이 표시됩니다. `src/components/Comments.astro`에서 서버 `https://api.aidaon.com/remark42`, 사이트 ID `adfree`를 사용합니다. 댓글 식별자는 미리보기 주소가 아닌 정식 페이지 URL입니다. 댓글 불러오기 버튼을 누른 뒤 외부 스크립트를 요청합니다.
 
 공통 서버 구성과 운영 안내는 인접한 `shared-services/deploy/remark42/`에 있습니다. 비밀키와 댓글 DB는 Git에 포함하지 않습니다.
+
+## 개발 접속 주소
+
+Metis의 공통 개발 호스트는 `metis.aidaon.com`입니다.
+Adfree: http://metis.aidaon.com:8430/ (예: `/apps/peazip/`).
+접속 기기는 Tailscale에 연결되어 있어야 합니다. DNS는 Metis의 Tailscale IP를
+가리키는 DNS 전용 A 레코드이며, 프로젝트별로 포트만 구분합니다.
+개발 서버는 `0.0.0.0:8430`으로 실행하고 `metis.aidaon.com`을 허용합니다.
+정식 사이트와 canonical 주소는 `https://adfree.aidaon.com`을 유지합니다.

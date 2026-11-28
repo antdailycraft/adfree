@@ -15,7 +15,7 @@ const resources = backlog.entries.filter((entry) => entry.status === "listed_ext
     </header>
     <ul class="resource-list" aria-label="외부 리소스 목록">
       {resources.map((resource) => {
-        const host = new URL(resource.url).hostname;
+        const displayHost = new URL(resource.url).hostname.replace(/^www\./, "");
         return (
         <li class="resource-card">
           {resource.snapshot ? <img class="resource-preview" src={withBase(`media/resources/${resource.snapshot}.webp`)} width="768" height="480" alt={`${resource.name} 공개 화면 미리보기`} loading="lazy" decoding="async" /> : <p>사이트 미리보기 준비 중</p>}
@@ -27,8 +27,8 @@ const resources = backlog.entries.filter((entry) => entry.status === "listed_ext
               {resource.adFreeStatus === "unverified" && <li>광고 여부 미확인</li>}
             </ul>
           <div class="resource-destination">
-            <span class="resource-host">{host}</span>
-            <a class="outline-action" href={resource.url}>{resource.name} 열기 <span aria-hidden="true">↗</span></a>
+            <span class="resource-host">{displayHost}</span>
+            <a class="outline-action" href={resource.url} aria-label={`${resource.name} 열기`}><span aria-hidden="true">↗</span></a>
           </div>
           </div>
         </li>
@@ -54,11 +54,10 @@ const resources = backlog.entries.filter((entry) => entry.status === "listed_ext
   .resource-preview { width: 100%; height: auto; display: block; border: 1px solid var(--color-rule); }
   .resource-destination { margin-top: var(--space-md); display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-sm); }
   .resource-card > div { min-width: 0; }
-  .resource-destination a { max-width: 100%; white-space: normal; }
   .resource-host { color: var(--color-muted); overflow-wrap: anywhere; }
   .resource-card h2 { font-size: 1.375rem; margin: 0 0 .5rem; }
   .resource-card p { color: var(--color-ink-soft); }
   .resource-facts { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin: .75rem 0 0; padding: 0; font-size: .875rem; color: var(--color-ink-soft); }
   .resource-facts li { padding: .25rem .625rem; border-radius: var(--radius-sm); background: var(--color-paper-2); }
-  .outline-action { gap: .5rem; }
+  .resource-destination .outline-action { min-width: 2.75rem; padding-inline: 0; }
 </style>

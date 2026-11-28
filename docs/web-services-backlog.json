@@ -1,5 +1,5 @@
 {
-  "purpose": "향후 웹서비스 수집 범위 확장 시 검토할 참고 목록. 현재 공개 카탈로그에는 포함하지 않음.",
+  "purpose": "향후 웹서비스 수집 범위 확장 시 검토할 참고 목록. 공개 여부는 항목별 상태로 관리함.",
   "savedAt": "2026-11-24",
   "source": "https://blog.aidaon.com/links/",
   "relatedReview": "blog-links-review-2026-11-24.json",
@@ -41,6 +41,53 @@
       "source": "사용자 제공 원격 데스크톱 목록 (2026-11-24)",
       "evidence": "https://support.google.com/chrome/answer/1649523",
       "note": "웹 접속과 호스트 앱 설치가 결합된 서비스. Google 계정·조직 정책·무광고 여부 추가 검토 필요."
+    },
+    {
+      "name": "Magnific Icons (구 Iconfinder)",
+      "url": "https://www.magnific.com/icons",
+      "category": "아이콘 리소스",
+      "status": "listed_external",
+      "pricing": "무료·유료 혼합",
+      "description": "PNG·SVG 아이콘을 찾아 다운로드할 수 있는 외부 리소스입니다.",
+      "adFreeStatus": "unverified",
+      "checkedAt": "2026-11-28",
+      "originalUrl": "https://www.iconfinder.com/",
+      "note": "무료·유료 혼합. 공식 아이콘 페이지와 이동 경로를 확인했으며 로그인·다운로드 과정과 광고 여부는 미확인입니다. 브라우징 검증에서는 Magnific에 도달했으나 curl은 Freepik 경유 중 HTTP 403을 반환했습니다."
+    },
+    {
+      "name": "Fontjoy",
+      "url": "https://fontjoy.com/",
+      "category": "글꼴 조합",
+      "status": "listed_external",
+      "pricing": "이용 요금 미확인",
+      "description": "글꼴 조합을 생성하고 원하는 문구를 입력해 제목과 본문에 어울리는 글꼴을 미리 볼 수 있습니다.",
+      "adFreeStatus": "unverified",
+      "checkedAt": "2026-11-28",
+      "note": "공식 페이지의 글꼴 조합 생성과 미리보기 안내를 확인했습니다. 비용 정책과 광고 여부는 확인하지 못했습니다."
+    },
+    {
+      "name": "Lucide",
+      "url": "https://lucide.dev/",
+      "category": "아이콘 리소스",
+      "status": "listed_external",
+      "pricing": "무료·오픈소스",
+      "description": "크기, 색상, 선 두께를 조절할 수 있는 SVG 아이콘 라이브러리입니다. 기본 ISC 라이선스가 적용되며 일부 Feather 기반 아이콘은 MIT 라이선스를 따릅니다.",
+      "adFreeStatus": "unverified",
+      "checkedAt": "2026-11-28",
+      "licenseUrl": "https://lucide.dev/license",
+      "note": "공식 사이트의 후원 안내와 라이선스 문서를 확인했습니다. 광고 여부는 미확인입니다."
+    },
+    {
+      "name": "Manus",
+      "url": "https://manus.im/",
+      "category": "AI 에이전트",
+      "status": "listed_external",
+      "pricing": "이용 요금 미확인",
+      "description": "자료 조사, 슬라이드 제작, 웹사이트 구축을 돕는 AI 에이전트입니다.",
+      "adFreeStatus": "unverified",
+      "checkedAt": "2026-11-28",
+      "pricingUrl": "https://manus.im/pricing",
+      "note": "공식 사이트의 기능 소개와 요금제 페이지를 확인했습니다. 요금제 상세와 광고 여부는 미확인입니다."
     }
   ],
   "reviewBeforeListing": [

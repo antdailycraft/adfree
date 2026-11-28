@@ -1039,5 +1039,23 @@
       "caption": "SUSE Linux Enterprise Server 공식 문서의 VNC 연결 예시입니다.",
       "provenance": "documentation"
     }
+  },
+  "audacity": {
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ],
+    "platformSource": "https://www.audacityteam.org/download/",
+    "platformNote": "공식 다운로드 페이지의 데스크톱 배포 기준입니다.",
+    "checkedAt": "2026-11-28"
+  },
+  "hoax-eliminator": {
+    "platforms": [
+      "windows"
+    ],
+    "platformSource": "https://teus.me/HoaxEliminator",
+    "platformNote": "Windows용 키보드 보안 프로그램 제거 도구입니다.",
+    "checkedAt": "2026-11-28"
   }
 }

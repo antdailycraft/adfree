@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import backlog from "../../docs/web-services-backlog.json";
+
+const resources = backlog.entries.filter((entry) => entry.status === "listed_external");
+---
+
+<BaseLayout title="외부 리소스" description="무료·유료 이용 범위와 광고 확인 상태를 함께 안내하는 외부 웹 리소스">
+  <div class="text-page shell">
+    <header class="text-page__header">
+      <h1>외부 리소스</h1>
+      <p>웹에서 사용할 수 있는 자료를 모았습니다. 이용 요금과 광고 확인 상태를 살펴보세요.</p>
+    </header>
+    <ul class="resource-list" aria-label="외부 리소스 목록">
+      {resources.map((resource) => (
+        <li class="resource-card">
+          <div>
+            <h2>{resource.name}</h2>
+            <p>{resource.description}</p>
+            <ul class="resource-facts" aria-label="이용 정보">
+              <li>{resource.pricing}</li>
+              {resource.adFreeStatus === "unverified" && <li>광고 여부 미확인</li>}
+            </ul>
+          </div>
+          <a class="outline-action" href={resource.url}>외부 사이트 열기 <span aria-hidden="true">↗</span></a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .resource-list { list-style: none; margin: 0; padding: 0; }
+  .resource-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+  }
+  .resource-card h2 { font-size: 1.375rem; margin: 0 0 .5rem; }
+  .resource-card p { color: var(--color-ink-soft); }
+  .resource-facts { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin: .75rem 0 0; padding: 0; font-size: .875rem; color: var(--color-ink-soft); }
+  .resource-facts li { padding: .25rem .625rem; border-radius: var(--radius-sm); background: var(--color-paper-2); }
+  .outline-action { gap: .5rem; }
+</style>

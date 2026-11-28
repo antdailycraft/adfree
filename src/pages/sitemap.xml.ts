@@ -4,7 +4,7 @@ import { apps } from "../data/apps";
 export const GET: APIRoute = ({ site }) => {
   if (!site) throw new Error("A site URL is required to generate the sitemap.");
   const paths = [
-    "/", "/apps/", "/updates/", "/methodology/", "/guides/official-downloads/",
+    "/", "/apps/", "/resources/", "/updates/", "/methodology/", "/guides/official-downloads/",
     ...apps.map((app) => `/apps/${app.slug}/`),
   ];
   const entries = paths.map((path) => {

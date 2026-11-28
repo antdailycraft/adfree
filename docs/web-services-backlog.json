@@ -52,7 +52,8 @@
       "adFreeStatus": "unverified",
       "checkedAt": "2026-11-28",
       "originalUrl": "https://www.iconfinder.com/",
-      "note": "무료·유료 혼합. 공식 아이콘 페이지와 이동 경로를 확인했으며 로그인·다운로드 과정과 광고 여부는 미확인입니다. 브라우징 검증에서는 Magnific에 도달했으나 curl은 Freepik 경유 중 HTTP 403을 반환했습니다."
+      "note": "무료·유료 혼합. 공식 아이콘 페이지와 이동 경로를 확인했으며 로그인·다운로드 과정과 광고 여부는 미확인입니다. 브라우징 검증에서는 Magnific에 도달했으나 curl은 Freepik 경유 중 HTTP 403을 반환했습니다.",
+      "snapshot": "magnific"
     },
     {
       "name": "Fontjoy",
@@ -63,7 +64,8 @@
       "description": "글꼴 조합을 생성하고 원하는 문구를 입력해 제목과 본문에 어울리는 글꼴을 미리 볼 수 있습니다.",
       "adFreeStatus": "unverified",
       "checkedAt": "2026-11-28",
-      "note": "공식 페이지의 글꼴 조합 생성과 미리보기 안내를 확인했습니다. 비용 정책과 광고 여부는 확인하지 못했습니다."
+      "note": "공식 페이지의 글꼴 조합 생성과 미리보기 안내를 확인했습니다. 비용 정책과 광고 여부는 확인하지 못했습니다.",
+      "snapshot": "fontjoy"
     },
     {
       "name": "Lucide",
@@ -75,7 +77,8 @@
       "adFreeStatus": "unverified",
       "checkedAt": "2026-11-28",
       "licenseUrl": "https://lucide.dev/license",
-      "note": "공식 사이트의 후원 안내와 라이선스 문서를 확인했습니다. 광고 여부는 미확인입니다."
+      "note": "공식 사이트의 후원 안내와 라이선스 문서를 확인했습니다. 광고 여부는 미확인입니다.",
+      "snapshot": "lucide"
     },
     {
       "name": "Manus",
@@ -87,7 +90,68 @@
       "adFreeStatus": "unverified",
       "checkedAt": "2026-11-28",
       "pricingUrl": "https://manus.im/pricing",
-      "note": "공식 사이트의 기능 소개와 요금제 페이지를 확인했습니다. 요금제 상세와 광고 여부는 미확인입니다."
+      "note": "공식 사이트의 기능 소개와 요금제 페이지를 확인했습니다. 요금제 상세와 광고 여부는 미확인입니다.",
+      "snapshot": "manus"
+    },
+    {
+      "name": "웹사이트 로딩 속도 개선 · 보존본",
+      "url": "https://web.archive.org/web/20161106201848/http://nigayo.github.io/javascript/2014/04/04/webPerformance.html",
+      "originalUrl": "https://nigayo.github.io/javascript/2014/04/04/webPerformance.html",
+      "category": "웹사이트 로딩 속도 개선",
+      "status": "listed_external",
+      "pricing": "공개 열람",
+      "adFreeStatus": "unverified",
+      "description": "크롬 개발자 도구로 웹페이지 로딩을 진단하는 2014년 글의 보존본입니다.",
+      "snapshot": "performance",
+      "checkedAt": "2026-11-28"
+    },
+    {
+      "name": "HTML5 오디오 태그 · 보존본",
+      "url": "https://web.archive.org/web/20150418014609/http://blog.kurien.co.kr:80/74",
+      "originalUrl": "http://blog.kurien.co.kr/74",
+      "category": "HTML5 Audio",
+      "status": "listed_external",
+      "pricing": "공개 열람",
+      "adFreeStatus": "unverified",
+      "description": "Kurien의 HTML5 오디오 태그 사용법을 담은 보존본입니다.",
+      "snapshot": "audio",
+      "checkedAt": "2026-11-28"
+    },
+    {
+      "name": "Maniackers Design",
+      "url": "https://mksd.jp/index-2.html",
+      "originalUrl": "http://mksd.jp/index-2.html",
+      "category": "디자인",
+      "status": "listed_external",
+      "pricing": "공개 열람",
+      "adFreeStatus": "unverified",
+      "description": "일본 디자인 스튜디오의 글꼴, 그래픽 작업과 출판물을 살펴볼 수 있습니다.",
+      "snapshot": "design",
+      "checkedAt": "2026-11-28"
+    },
+    {
+      "name": "HTML 이벤트 속성",
+      "url": "https://www.w3schools.com/tags/ref_eventattributes.asp",
+      "originalUrl": "http://www.w3schools.com/tags/ref_eventattributes.asp",
+      "category": "HTML 이벤트",
+      "status": "listed_external",
+      "pricing": "공개 열람",
+      "adFreeStatus": "unverified",
+      "description": "W3Schools의 HTML 이벤트 속성과 사용 예제 목록입니다.",
+      "snapshot": "events",
+      "checkedAt": "2026-11-28"
+    },
+    {
+      "name": "배철수의 음악캠프 선곡표",
+      "url": "https://program.imbc.com/radio/music-camp/playlist",
+      "originalUrl": "http://mini.imbc.com/manager/SelectList.asp?PROG_CD=RAMFM300",
+      "category": "배철수의 음악캠프 선곡표",
+      "status": "listed_external",
+      "pricing": "공개 열람",
+      "adFreeStatus": "unverified",
+      "description": "MBC 라디오 방송 날짜별 선곡표입니다.",
+      "snapshot": "imbc",
+      "checkedAt": "2026-11-28"
     }
   ],
   "reviewBeforeListing": [

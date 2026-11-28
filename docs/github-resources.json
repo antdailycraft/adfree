@@ -1,0 +1,46 @@
+[
+  {
+    "forks_count": 39,
+    "full_name": "leonardocardoso/Link-Preview",
+    "pushed_at": "2016-09-13T13:57:50Z",
+    "stargazers_count": 164,
+    "checkedAt": "2026-11-28T11:27:17Z",
+    "url": "https://github.com/LeonardoCardoso/Link-Preview",
+    "originalUrl": "https://github.com/LeonardoCardoso/Facebook-Link-Preview",
+    "category": "링크 미리보기",
+    "snapshot": "link-preview"
+  },
+  {
+    "forks_count": 129,
+    "full_name": "leonardocardoso/Android-Link-Preview",
+    "pushed_at": "2020-02-12T14:09:02Z",
+    "stargazers_count": 414,
+    "checkedAt": "2026-11-28T11:27:17Z",
+    "url": "https://github.com/LeonardoCardoso/Android-Link-Preview/tree/master/library/src/main/java/com/leocardz/link/preview/library",
+    "originalUrl": "https://github.com/LeonardoCardoso/Android-Link-Preview/tree/master/library/src/main/java/com/leocardz/link/preview/library",
+    "category": "Android 링크 미리보기",
+    "snapshot": "android-preview"
+  },
+  {
+    "forks_count": 1895,
+    "full_name": "yasserg/crawler4j",
+    "pushed_at": "2021-11-04T08:31:46Z",
+    "stargazers_count": 4617,
+    "checkedAt": "2026-11-28T11:27:18Z",
+    "url": "https://github.com/yasserg/crawler4j",
+    "originalUrl": "https://code.google.com/p/crawler4j/",
+    "category": "Java 크롤러",
+    "snapshot": "crawler4j"
+  },
+  {
+    "forks_count": 259,
+    "full_name": "JamesHeinrich/getID3",
+    "pushed_at": "2026-11-24T12:30:26Z",
+    "stargazers_count": 1242,
+    "checkedAt": "2026-11-28T11:27:18Z",
+    "url": "https://github.com/JamesHeinrich/getID3",
+    "originalUrl": "http://getid3.sourceforge.net/",
+    "category": "PHP MP3 태그",
+    "snapshot": "getid3"
+  }
+]

@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/paths";
+import repositories from "../../docs/github-resources.json";
+
+const formatTime = (value: string | null) => value ? new Intl.DateTimeFormat("ko-KR", {
+  dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Seoul"
+}).format(new Date(value)) : "미확인";
+const formatCount = (value: number | null) => value?.toLocaleString("ko-KR") ?? "미확인";
+---
+<BaseLayout title="GitHub 저장소">
+  <article class="text-page shell">
+    <header class="text-page__header">
+      <a class="text-link" href={withBase("resources/")}>외부 리소스</a>
+      <h1>GitHub 저장소</h1>
+      <p>개발 자료의 코드와 저장소 통계입니다. 시각은 한국 시간 기준입니다.</p>
+    </header>
+    <ul class="repositories">
+      {repositories.map(repo => <li>
+        <img src={withBase(`media/resources/${repo.snapshot}.webp`)} alt="" width="768" height="480" loading="lazy" />
+        <div>
+          <p>{repo.category}</p>
+          <h2><a href={repo.url}>{repo.full_name}</a></h2>
+          <p>github.com · {repo.url.includes("/tree/") ? "코드 경로" : "저장소"}</p>
+          <dl>
+            <div><dt>마지막 코드 푸시</dt><dd>{formatTime(repo.pushed_at)}</dd></div>
+            <div><dt>Fork 수</dt><dd>{formatCount(repo.forks_count)}</dd></div>
+            <div><dt>Star 수</dt><dd>{formatCount(repo.stargazers_count)}</dd></div>
+            <div><dt>통계 조회 시각</dt><dd>{formatTime(repo.checkedAt)}</dd></div>
+          </dl>
+        </div>
+      </li>)}
+    </ul>
+  </article>
+</BaseLayout>
+<style>
+  .repositories { padding: 0; list-style: none; }
+  .repositories li { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); align-items: center; gap: var(--space-lg); padding-block: var(--space-lg); border-bottom: 1px solid var(--color-rule); }
+  .repositories img { width: 100%; height: auto; }
+  .repositories h2 { font-size: var(--text-lg); overflow-wrap: anywhere; }
+  .repositories dl { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-sm); }
+  .repositories dt { font-size: var(--text-sm); color: var(--color-muted); }
+  .repositories dd { margin: 0; }
+  @media (max-width: 40rem) { .repositories li { grid-template-columns: minmax(0,1fr); } }
+</style>

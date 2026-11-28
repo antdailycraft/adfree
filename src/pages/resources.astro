@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/paths";
 import backlog from "../../docs/web-services-backlog.json";
 
 const resources = backlog.entries.filter((entry) => entry.status === "listed_external");
@@ -10,10 +11,14 @@ const resources = backlog.entries.filter((entry) => entry.status === "listed_ext
     <header class="text-page__header">
       <h1>외부 리소스</h1>
       <p>웹에서 사용할 수 있는 자료를 모았습니다. 이용 요금과 광고 확인 상태를 살펴보세요.</p>
+      <a class="text-link" href={withBase("github-resources/")}>GitHub 저장소 목록</a>
     </header>
     <ul class="resource-list" aria-label="외부 리소스 목록">
-      {resources.map((resource) => (
+      {resources.map((resource) => {
+        const host = new URL(resource.url).hostname;
+        return (
         <li class="resource-card">
+          {resource.snapshot ? <img class="resource-preview" src={withBase(`media/resources/${resource.snapshot}.webp`)} width="768" height="480" alt={`${resource.name} 공개 화면 미리보기`} loading="lazy" decoding="async" /> : <p>사이트 미리보기 준비 중</p>}
           <div>
             <h2>{resource.name}</h2>
             <p>{resource.description}</p>
@@ -21,10 +26,14 @@ const resources = backlog.entries.filter((entry) => entry.status === "listed_ext
               <li>{resource.pricing}</li>
               {resource.adFreeStatus === "unverified" && <li>광고 여부 미확인</li>}
             </ul>
+          <div class="resource-destination">
+            <span class="resource-host">{host}</span>
+            <a class="outline-action" href={resource.url}>{resource.name} 열기 <span aria-hidden="true">↗</span></a>
           </div>
-          <a class="outline-action" href={resource.url}>외부 사이트 열기 <span aria-hidden="true">↗</span></a>
+          </div>
         </li>
-      ))}
+        );
+      })}
     </ul>
   </div>
 </BaseLayout>
@@ -32,16 +41,21 @@ const resources = backlog.entries.filter((entry) => entry.status === "listed_ext
 <style>
   .resource-list { list-style: none; margin: 0; padding: 0; }
   .resource-card {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr);
     align-items: center;
-    justify-content: space-between;
     gap: var(--space-md);
-    padding: clamp(1rem, 3vw, 2rem);
-    border: 1px solid var(--color-rule);
-    border-radius: var(--radius-md);
-    background: var(--color-white);
+    padding-block: var(--space-lg);
+    border-top: 1px solid var(--color-rule);
   }
+  @media (max-width: 40rem) {
+    .resource-card { grid-template-columns: minmax(0,1fr); }
+  }
+  .resource-preview { width: 100%; height: auto; display: block; border: 1px solid var(--color-rule); }
+  .resource-destination { margin-top: var(--space-md); display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-sm); }
+  .resource-card > div { min-width: 0; }
+  .resource-destination a { max-width: 100%; white-space: normal; }
+  .resource-host { color: var(--color-muted); overflow-wrap: anywhere; }
   .resource-card h2 { font-size: 1.375rem; margin: 0 0 .5rem; }
   .resource-card p { color: var(--color-ink-soft); }
   .resource-facts { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin: .75rem 0 0; padding: 0; font-size: .875rem; color: var(--color-ink-soft); }

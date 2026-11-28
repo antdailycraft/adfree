@@ -38,7 +38,7 @@ const searchText = createSearchText(app, categoryById[app.category]);
       <h3><a href={withBase(`apps/${app.slug}/`)}>{app.name}</a></h3>
       <PlatformBadges slug={app.slug} />
     </div>
-    <p class="app-row__summary">{app.summary}</p>
+    <p class="app-row__summary">{app.summary.split("\n")[0]}</p>
   </div>
   <dl class="app-row__ledger">
     <div>
@@ -56,6 +56,7 @@ const searchText = createSearchText(app, categoryById[app.category]);
   </dl>
   <div class="app-row__state">
     <AdfreeEmblem app={app} />
+    {!app.adFreeReview && <span>광고 여부 미확인</span>}
     <StatusBadge status={app.sourceStatus} />
     <StatusBadge status={app.installerStatus} type="installer" />
   </div>

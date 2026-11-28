@@ -10,17 +10,16 @@ const featured = ["7-zip", "vlc", "marktext", "sharex", "everything", "powertoys
 <div class="landing">
 <section class="landing-hero shell">
   <div class="landing-hero__copy">
-    <h1>좋은 도구만.<br /><span>복잡함 없이.</span></h1>
-    <p>필요한 일에 맞는 무료 Windows 도구를 찾으세요.<br />공식 출처와 확인 기록까지, 한곳에서.</p>
-    <a class="landing-cta" href={withBase("apps/")}>도구 찾아보기 <span aria-hidden="true">↗</span></a>
+    <h1>Windows 도구<br /><span>찾아보기</span></h1>
+    <p>압축, 문서 편집, 화면 녹화에 쓸 앱을 찾고 다운로드 주소와 설치 검증 상태를 확인하세요.</p>
+    <a class="landing-cta" href={withBase("apps/")}>전체 앱 보기 <span aria-hidden="true">↗</span></a>
     <a class="landing-secondary" href="#how-it-works">어떻게 확인하나요?</a>
     <div class="landing-facts"><span><strong>{apps.length}</strong>개 탐색 후보</span><span><strong>{categories.length}</strong>가지 용도</span><span>공식 출처 확인 <strong>{sourceConfirmedApps.length}</strong>개</span></div>
   </div>
-  <div class="tool-stage" data-tool-stage aria-label="탐색할 수 있는 실제 앱">
-    <div class="tool-stage__orbit" aria-hidden="true"></div>
-    <div class="tool-stage__collection">{featured.map((app,index) => <a class={`tool-tile tool-tile--${index}`} href={withBase(`apps/${app.slug}/`)}><span class="tool-tile__icon"><CategoryIcon category={app.category} /></span><strong>{app.name}</strong><span>{app.sourceStatus === "confirmed" ? "공식 출처 확인" : "출처 검토 중"}</span></a>)}</div>
-    <p class="tool-stage__caption">나에게 맞는 도구를 발견하는 곳.</p>
-  </div>
+  <section class="featured-index" aria-labelledby="featured-title">
+    <h2 id="featured-title">앱 바로가기</h2>
+    <ul>{featured.map(app => <li><a href={withBase(`apps/${app.slug}/`)}><strong>{app.name}</strong><span>{categories.find(category => category.id === app.category)?.label}</span></a></li>)}</ul>
+  </section>
 </section>
 <section class="landing-discover shell" aria-labelledby="discover-title">
   <header><h2 id="discover-title">무엇을 하고 싶으세요?</h2><p>앱 이름을 몰라도 괜찮습니다. 하려는 일부터 골라보세요.</p></header>
@@ -34,28 +33,9 @@ const featured = ["7-zip", "vlc", "marktext", "sharex", "everything", "powertoys
     <li data-process-step><span>03</span><div><h3>공식 페이지로 이동하세요</h3><p>확인된 공식 다운로드 페이지로 안내합니다. 출처 검토 중인 링크는 후보로 표시합니다.</p></div></li>
   </ol>
 </div></section>
-<section class="landing-close shell"><h2>다음에 쓸 도구,<br />여기서 찾아보세요.</h2><div><p>설치 파일은 직접 배포하지 않습니다.<br />출처 확인과 Windows 설치 검증은 별도로 표시합니다.</p><a class="landing-cta" href={withBase("apps/")}>카탈로그 열기 <span aria-hidden="true">↗</span></a></div></section>
+
 </div>
 <script>
-  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const stage = document.querySelector<HTMLElement>("[data-tool-stage]");
-  const collection = stage?.querySelector<HTMLElement>(".tool-stage__collection");
-  let frame = 0;
-  stage?.addEventListener("pointermove", event => {
-    if (reduced.matches || event.pointerType !== "mouse" || !collection) return;
-    cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(() => {
-      const b = stage.getBoundingClientRect();
-      collection.style.transform = `perspective(1000px) rotateX(${-((event.clientY-b.top)/b.height-.5)*8}deg) rotateY(${((event.clientX-b.left)/b.width-.5)*10}deg)`;
-    });
-  });
-  const reset = () => { cancelAnimationFrame(frame); if(collection) collection.style.transform = "none"; };
-  stage?.addEventListener("pointerleave", reset);
-  reduced.addEventListener("change", reset);
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => entry.target.classList.toggle("is-active",entry.isIntersecting)), {threshold:.65});
-    document.querySelectorAll("[data-process-step]").forEach(step => observer.observe(step));
-  }
   if (location.search || location.hash === "#catalog") location.replace(`${import.meta.env.BASE_URL}apps/${location.search}${location.hash}`);
 </script>
 </BaseLayout>

@@ -38,6 +38,9 @@ const media = appMedia[app.slug];
         <p class="detail-header__summary">{app.summary}</p>
       </div>
       <div class="detail-header__actions">
+        <p>{sourceConfirmed ? "공식 도메인" : "검토 중인 도메인"} · {host}</p>
+        <StatusBadge status={app.installerStatus} type="installer" />
+        {!app.adFreeReview && <p>광고 여부 미확인</p>}
         <a class="primary-action" href={app.downloadPage} rel="noopener noreferrer">
           {sourceConfirmed ? "공식 다운로드 페이지" : "후보 출처 열기 · 검토 중"}
         </a>

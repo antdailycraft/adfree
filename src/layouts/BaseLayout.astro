@@ -14,12 +14,12 @@ interface Props {
 }
 
 const {
-  title = "Adfree — 광고 없는 Windows 유틸리티",
+  title = "Adfree — Windows 도구 카탈로그",
   description = "공식 다운로드 경로와 검증 상태를 공개하는 Windows 유틸리티 카탈로그",
   image,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const fullTitle = title === "Adfree — 광고 없는 Windows 유틸리티" ? title : `${title} · Adfree`;
+const fullTitle = title === "Adfree — Windows 도구 카탈로그" ? title : `${title} · Adfree`;
 ---
 
 <!doctype html>

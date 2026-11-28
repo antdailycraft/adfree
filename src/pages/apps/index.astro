@@ -12,51 +12,12 @@ const recentChecks = [...sourceConfirmedApps]
   .slice(0, 5);
 ---
 
-<BaseLayout>
-  <section class="home-intro shell">
-    <div class="home-intro__copy">
-      <h1>
-        <span class="home-intro__title-line">광고 없는 도구,</span>
-        <span class="home-intro__title-line home-intro__accent">공식 경로로.</span>
-      </h1>
-      <p>공식 출처가 확인된 앱과 아직 출처를 검토 중인 후보를 나눠 보여드립니다. 확인 날짜와 Windows 설치 검증 상태도 함께 기록합니다.</p>
-      <form class="home-search" data-home-search>
-        <label for="home-query">용도로 찾기</label>
-        <div class="catalog-search__field home-search__field">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="6.5"></circle>
-            <path d="m16 16 4 4"></path>
-          </svg>
-          <input id="home-query" type="search" autocomplete="off" placeholder="예: 압축, PDF" data-home-query />
-          <button type="submit">후보 찾기</button>
-        </div>
-        <p>앱 이름을 몰라도 하려는 일로 찾을 수 있습니다.</p>
-      </form>
-      <div class="home-intro__links">
-        <a class="text-link" href={withBase("updates/")}>검증 기록 보기</a>
-        <a class="text-link" href={withBase("methodology/")}>선정 기준 보기</a>
-      </div>
-    </div>
-    <aside class="scope-ledger" aria-label="현재 검증 현황">
-      <div class="discovery-art" aria-hidden="true"><span class="discovery-art__tile">Aa<span>텍스트 편집</span></span><span class="discovery-art__tile">.zip<span>압축 · 파일</span></span><span class="discovery-art__tile">▶<span>동영상 · 음악</span></span></div>
-      <div class="scope-ledger__title">
-        <h2>현재 검증 현황</h2>
-        <span>{formatKoreanDate(apps.map((app) => app.sourceCheckedAt ?? "").sort().at(-1) ?? null)} 기준</span>
-      </div>
-      <dl>
-        <div><dt>검토 대상</dt><dd>{apps.length}개</dd></div>
-        <div><dt>공식 출처 확인</dt><dd>{sourceConfirmedApps.length}개</dd></div>
-        <div><dt>Windows 설치 검증 완료</dt><dd>{installerVerifiedApps.length}개</dd></div>
-      </dl>
-      <p>Windows에서 설치 과정을 직접 확인한 뒤 완료로 표시합니다.</p>
-    </aside>
-  </section>
-
+<BaseLayout title="Windows 앱 탐색">
   <section class="catalog-section shell" id="catalog" aria-labelledby="catalog-title">
     <header class="section-heading section-heading--catalog">
       <div>
-        <h2 id="catalog-title">용도로 찾기</h2>
-        <p>앱 이름을 몰라도 하려는 일로 찾을 수 있습니다.</p>
+        <h1 id="catalog-title">Windows 앱 탐색</h1>
+        <p>후보 {apps.length}개 중 공식 출처 확인 {sourceConfirmedApps.length}개 · Windows 설치 검증 완료 {installerVerifiedApps.length}개</p>
       </div>
       <p class="catalog-count" aria-live="polite">후보 <strong data-result-count>{apps.length}</strong>개</p>
     </header>
@@ -166,8 +127,6 @@ const recentChecks = [...sourceConfirmedApps]
   <script>
     import { matchesSearch, normalizeSearchText } from "../../lib/search";
     const form = document.querySelector<HTMLFormElement>("[data-catalog-form]");
-    const homeForm = document.querySelector<HTMLFormElement>("[data-home-search]");
-    const homeQuery = document.querySelector<HTMLInputElement>("[data-home-query]");
     const queryInput = document.querySelector<HTMLInputElement>("[data-catalog-query]");
     const sourceSelect = document.querySelector<HTMLSelectElement>("[data-source-filter]");
     const portableInput = document.querySelector<HTMLInputElement>("[data-portable-filter]");
@@ -213,7 +172,6 @@ const recentChecks = [...sourceConfirmedApps]
     };
     const reset = () => {
       form?.reset();
-      if (homeQuery) homeQuery.value = "";
       setCategory("all");
       applyFilters();
       queryInput?.focus({ preventScroll: true });
@@ -228,26 +186,18 @@ const recentChecks = [...sourceConfirmedApps]
       applyFilters();
     });
     queryInput?.addEventListener("input", () => {
-      if (homeQuery) homeQuery.value = queryInput.value;
       applyFilters();
     });
     sourceSelect?.addEventListener("change", applyFilters);
     portableInput?.addEventListener("change", applyFilters);
     document.querySelectorAll("[data-catalog-reset]").forEach((button) => button.addEventListener("click", reset));
     form?.addEventListener("submit", (event) => event.preventDefault());
-    homeForm?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (queryInput) queryInput.value = homeQuery?.value ?? "";
-      applyFilters();
-      document.querySelector("#catalog")?.scrollIntoView();
-      queryInput?.focus({ preventScroll: true });
-    });
+
 
     const params = new URLSearchParams(window.location.search);
     const initialCategory = params.get("category") ?? "all";
     if (categoryButtons.some((button) => button.dataset.categoryFilter === initialCategory) || categorySelect?.querySelector(`option[value="${CSS.escape(initialCategory)}"]`)) setCategory(initialCategory);
     if (queryInput) queryInput.value = params.get("q") ?? "";
-    if (homeQuery) homeQuery.value = params.get("q") ?? "";
     if (sourceSelect && ["confirmed", "pending"].includes(params.get("source") ?? "")) sourceSelect.value = params.get("source") ?? "all";
     if (portableInput) portableInput.checked = params.get("portable") === "1";
     applyFilters();
